@@ -1,0 +1,48 @@
+{% extends "GestionPfeBundle::adminLayout.html.twig" %}
+
+{% block path %}
+    <a href="{{ path("gestion_pfe_admin") }}"
+{% endblock path %}
+{% block sidebar %}
+    <div class="sidebar-container">
+        <div class="sidemenu-container navbar-collapse collapse fixed-menu">
+            <div id="remove-scroll">
+                <ul class="sidemenu  page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                    <li class="sidebar-toggler-wrapper hide">
+                        <div class="sidebar-toggler">
+                            <span></span>
+                        </div>
+                    </li>
+
+                    <li class="nav-item start ">
+                        <a href="#" class="nav-link nav-toggle">
+                            <i class="material-icons">dashboard</i>
+                            <span class="title">Dashboard</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item   ">
+                                <a href="index-2.html" class="nav-link ">
+                                    <span class="title">Dashboard 1</span>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="dashboard2.html" class="nav-link ">
+                                    <span class="title">Dashboard 2</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="dashboard3.html" class="nav-link ">
+                                    <span class="title">Dashboard 3</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock sidebar %}

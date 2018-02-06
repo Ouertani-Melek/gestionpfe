@@ -1,0 +1,334 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block title %}
+    <title>Educare | Your Profil</title>
+{% endblock title %}
+{% block body %}
+  <!--  <div class="main_title upper">
+        <h2>
+            <span class="line"><i class="ico-signup"></i></span>
+            Votre
+            <span class="main_title_c1"> Profile.</span>
+        </h2>
+    </div>
+    <div class="fos_user_user_show">
+        <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+        <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+        <div>
+            <div class="clearfix">
+                <a class="main_button color1 medium_btn bottom_space" target="_self" href="{{ path('fos_user_profile_edit') }}">
+                    Edit Profile</a>
+                <a class="main_button color6 medium_btn bottom_space" href="{{ path('fos_user_change_password') }}">Change Password?</a>
+                <a class="main_button color4 medium_btn bottom_space" href="{{ path('gestion_pfe_homepage') }}">Back</a>
+            </div>
+        </div>
+    </div>
+
+-->
+
+    <div class="page-banner-area" style="background-image: url(/Sites/GestionPFE/web/Client/img/page-banner/page-banner.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-content">
+                        <!-- Section Title -->
+                        <div class="section-title alt-sec-title">
+                            <h2>Professors Detail</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, debitis!</p>
+                        </div>
+                        <!-- Page breadcrumb -->
+                        <div class="page-breadcrumb">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a class="not-active" href="events-one.html">Professors Detail</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- // End Page banner area -->
+    <!-- Professors area -->
+    <div class="professors-area section-padding professors-detail">
+        <div class="container">
+            <div class="row">
+                <!-- Singel professors -->
+                <div class="col-md-12">
+                    <div class="single-professors-two">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-5">
+                                <div class="professors-two-img">
+                                    <img src="{{ asset('Client/img/professors/01.jpg') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-sm-7">
+                                <div class="professors-two-content">
+                                    <h4>{{ user.username }}</h4>
+                                    <span>assistant lecturer</span>
+                                    <span>dept of econimics </span>
+                                    <span>university of ESPRIT</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique ducimus vitae autem aliquid quisquam laborum ab voluptate eveniet eum et, ex eius quidem blanditiis facere aliquam nesciunt architecto dignissimos unde cupiditate voluptatibus eaque! A commodi dolor, nulla deserunt tenetur dicta id nam sed quidem sit quia. Molestias, iste maiores aperiam.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quo modi culpa, hic aperiam molestiae quam. Repellat sunt, perspiciatis suscipit nulla reiciendis molestiae eaque earum necessitatibus explicabo aperiam natus. Cupiditate animi iusto maxime at, unde voluptas deserunt placeat, quae, consequatur rem reiciendis laborum labore odio.</p>
+                                    <!-- professors Social links -->
+                                    <ul class="professors-social-two">
+                                        <li><a href="3.html"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="3.html"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="3.html"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                        <li><a href="3.html"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="professors-info">
+                                                Experience: <span>10 Years</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="professors-info">
+                                                Students: <span>15000</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="professors-info">
+                                                Courses: <span>04</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="professors-info">
+                                                Reviews: <span>4500</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mes-btn">
+                                        <a class="theme-btn hvr-shutter-in-horizontal" href="{{ path('fos_user_profile_edit') }}" >Edit Profile</a>
+                                        <a class="theme-btn hvr-shutter-in-horizontal" href=" {{ path('fos_user_change_password') }}"  style="float:right">Change Password</a>
+                                    </div>
+                                    <div class="mes-btn">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- // End Professors area -->
+    <!-- professors Other cource area -->
+    <div class="all-cource-area section-padding professors-other">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Section Title -->
+                    <div class="section-title">
+                        <h2>Other courses by {{ user.username }}</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- All cource -->
+            <div class="row">
+                <!-- Single Couses -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-cource">
+                        <div class="course-header">
+                            <img src="{{ asset('Client/img/professors/01.jpg') }}" alt="">
+                            <div class="course-new">
+                                New
+                            </div>
+                            <div class="course-title">
+                                <h3><a href="{{ asset('Client/img/professors/01.jpg') }}">Basic of nature photography</a></h3>
+                            </div>
+                            <div class="course-price">
+                                $149.99
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-author">
+                                <img src="{{ asset('Client/img/professors/01.jpg') }}" alt="">
+                                <span><a href="teacher-detail.html" class="not-active">{{ user.username }}</a></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="course-time">
+                                        Duration: <span>2 Years</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="course-time">
+                                        Students: <span>50</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="course-time">
+                                        Time: <span>9.00 - 12.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div class="course-info">
+                                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 42
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="course-info">
+                                        <i class="fa fa-comments" aria-hidden="true"></i> 62
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="course-info">
+                                        <ul class="course-rating">
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-btn">
+                                <a href="courses-deatail.html" class="theme-btn hvr-shutter-in-horizontal">Learn more</a>
+                                <a class="theme-btn-alt hvr-shutter-in-horizontal" href="#">Apply now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // End Single Couses -->
+                <!-- Single Couses -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-cource">
+                        <div class="course-header">
+                            <img src="{{ asset('Client/img/professors/01.jpg') }}" alt="">
+                            <div class="course-title">
+                                <h3><a href="courses-deatail.html">Basic of nature photography</a></h3>
+                            </div>
+                            <div class="course-price">
+                                $149.99
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-author">
+                                <img src="{{ asset('Client/img/professors/01.jpg') }}" alt="">
+                                <span><a href="teacher-detail.html" class="not-active">{{ user.username }}</a></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="course-time">
+                                        Duration: <span>2 Years</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="course-time">
+                                        Students: <span>50</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="course-time">
+                                        Time: <span>9.00 - 12.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div class="course-info">
+                                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 42
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="course-info">
+                                        <i class="fa fa-comments" aria-hidden="true"></i> 62
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="course-info">
+                                        <ul class="course-rating">
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-btn">
+                                <a href="courses-deatail.html" class="theme-btn hvr-shutter-in-horizontal">Learn more</a>
+                                <a class="theme-btn-alt hvr-shutter-in-horizontal" href="#">Apply now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // End Single Couses -->
+                <!-- Single Couses -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-cource">
+                        <div class="course-header">
+                            <img src="{{ asset('Client/img/professors/01.jpg') }}" alt="">
+                            <div class="course-title">
+                                <h3><a href="courses-deatail.html">Basic of nature photography</a></h3>
+                            </div>
+                            <div class="course-price">
+                                $149.99
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-author">
+                                <img src="{{ asset('Client/img/professors/01.jpg') }}-author.jpg" alt="">
+                                <span><a href="teacher-detail.html" class="not-active">{{ user.username }}</a></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="course-time">
+                                        Duration: <span>2 Years</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="course-time">
+                                        Students: <span>50</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="course-time">
+                                        Time: <span>9.00 - 12.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <div class="course-info">
+                                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 42
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="course-info">
+                                        <i class="fa fa-comments" aria-hidden="true"></i> 62
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="course-info">
+                                        <ul class="course-rating">
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-btn">
+                                <a href="courses-deatail.html" class="theme-btn hvr-shutter-in-horizontal">Learn more</a>
+                                <a class="theme-btn-alt hvr-shutter-in-horizontal" href="#">Apply now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // End Single Couses -->
+            </div>
+        </div>
+    </div><!-- // End professors Other cource area -->
+
+{% endblock body %}
+
+
+
+
+
+
+<!-- nav bar -->

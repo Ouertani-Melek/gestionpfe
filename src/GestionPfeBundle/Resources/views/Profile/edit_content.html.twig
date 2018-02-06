@@ -1,0 +1,69 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+
+<div class="page-banner-area" style="background-image: url(/Sites/GestionPFE/web/Client/img/page-banner/page-banner.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-content">
+                    <!-- Section Title -->
+                    <div class="section-title alt-sec-title">
+                        <h2>Profil Details</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, debitis!</p>
+                    </div>
+                    <!-- Page breadcrumb -->
+                    <div class="page-breadcrumb">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a class="not-active" href="events-one.html">Professors Detail</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- // End Page banner area -->
+<div class="professors-area section-padding professors-detail">
+    <div class="container">
+        <div class="row">
+            <!-- Singel professors -->
+            <div class="col-md-12">
+                <div class="single-professors-two">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-5">
+                            <div class="professors-two-img">
+                                <img src="{{ asset('Client/img/professors/01.jpg') }}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-5">
+                            {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+                            <div class="professors-two-content">
+
+                                <div class="form-group">
+                                   UserName : {{ form_widget(form.username,{'attr':{'class':'form-control'}}) }}
+                                </div>
+                                <div class="form-group">
+                                   Email: {{ form_widget(form.email,{'attr':{'class':'form-control'}}) }}
+                                </div>
+
+                                <div class="form-group">
+                                   Password : {{ form_widget(form.current_password,{'attr':{'class':'form-control','placeholder':'Your password'}}) }}
+                                </div>
+
+
+                            </div>
+                             <div class="mes-btn">
+                               <button type="submit" class="theme-btn hvr-shutter-in-horizontal" >Save</button>
+                             </div>
+                        {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- // End Professors area -->
+
+

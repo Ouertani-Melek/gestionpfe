@@ -1,0 +1,65 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+<div class="page-registration section-padding">
+    <div class="sign-">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="sign-up-area">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="signup-social">
+                                <h4>Login with social networks</h4>
+                                <div class="singel-social-sign facebook">
+                                    <a href="#">Sign in with <i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                </div>
+                                <div class="singel-social-sign twitter">
+                                    <a href="#">Sign in with <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                </div>
+                                <div class="singel-social-sign google">
+                                    <a href="#">Sign in with <i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                </div>
+                                <div class="singel-social-sign linkedin">
+                                    <a href="#">Sign in with <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="sign-up-form">
+                                <h3>sign up or register</h3>
+                                <!-- Sign up form -->
+                                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+                                    <div class="form-group">
+                                        {{ form_widget(form.username,{'attr':{'class':'form-control','placeholder':'Username'}}) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.email,{'attr':{'class':'form-control','placeholder':'Email address'}}) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.role,{'attr':{'class':'form-control'}}) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.plainPassword.first,{'attr':{'class':'form-control','placeholder':'password'}}) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.plainPassword.second,{'attr':{'class':'form-control','placeholder':'Confirm password'}}) }}
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button class="theme-btn hvr-shutter-in-horizontal" value="{{ 'registration.submit'|trans }}" type="submit">Sign Up</button>
+                                    </div>
+                                {{ form_end(form) }}<!-- // End Sign up form -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock body %}

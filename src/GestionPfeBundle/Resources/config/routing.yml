@@ -1,0 +1,13 @@
+gestion_pfe_homepage:
+    path:     /
+    defaults: { _controller: GestionPfeBundle:Default:index }
+
+gestion_pfe_admin:
+    path:     /admin
+    defaults: { _controller: GestionPfeBundle:Default:indexAdmin }
+gestion_pfe_entreprisehomepage:
+    path:     /entreprise
+    defaults: { _controller: GestionPfeBundle:Default:indexEntreprise }
+gestion_pfe_enseignanthomepage:
+    path:     /enseignant
+    defaults: { _controller: GestionPfeBundle:Default:indexEnseignant }
