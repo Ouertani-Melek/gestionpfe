@@ -24,12 +24,30 @@ class User extends BaseUser
      */
     protected $id;
 
-
-
-
-
-
     private $role;
+
+    /**
+     * @return string
+     */
+    public function getVerifier()
+    {
+        return $this->verifier;
+    }
+
+    /**
+     * @param string $verifier
+     */
+    public function setVerifier($verifier)
+    {
+        $this->verifier = $verifier;
+    }
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="verifier", type="boolean", nullable=true)
+     */
+    private $verifier;
+
 
     /**
      * @return mixed

@@ -7,54 +7,199 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Demandes
  *
- * @ORM\Table(name="demandes", indexes={@ORM\Index(name="iduser", columns={"iduser"}), @ORM\Index(name="idoffre", columns={"idoffre"})})
- * @ORM\Entity
+ * @ORM\Table(name="demandes")
+ * @ORM\Entity(repositoryClass="GestionPfeBundle\Repository\DemandesRepository")
  */
 class Demandes
 {
     /**
-     * @var integer
+     * @var int
      *
-     * @ORM\Column(name="iddemandes", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $iddemandes;
+    private $id;
 
     /**
-     * @var string
+     * @var bool
      *
-     * @ORM\Column(name="etat", type="string", length=255, nullable=true)
+     * @ORM\Column(name="etatDemande", type="boolean")
      */
-    private $etat;
+    private $etatDemande;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date", type="datetime", nullable=false)
+     * @ORM\Column(name="dateEntretien", type="date", nullable=true)
      */
-    private $date = 'CURRENT_TIMESTAMP';
+    private $dateEntretien;
 
     /**
-     * @var \User
+     * @var bool
+     *
+     * @ORM\Column(name="etatEntretien", type="boolean")
+     */
+    private $etatEntretien;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="confirmation", type="boolean", nullable=true)
+     */
+    private $confirmation;
+
+    /**
+     * @return mixed
+     */
+    public function getIdOffre()
+    {
+        return $this->idOffre;
+    }
+
+    /**
+     * @param mixed $idOffre
+     */
+    public function setIdOffre($idOffre)
+    {
+        $this->idOffre = $idOffre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
+    }
+
+    /**
+     * @param mixed $idUser
+     */
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
+    }
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="Offre")
+     * @ORM\JoinColumn(name="idoffre", referencedColumnName="id")
+     */
+    private $idOffre;
+    /**
+     * @var
      *
      * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="iduser", referencedColumnName="id")
-     * })
+     * @ORM\JoinColumn(name="iduser", referencedColumnName="id")
      */
-    private $iduser;
+    private $idUser;
+
 
     /**
-     * @var \Offres
+     * Get id
      *
-     * @ORM\ManyToOne(targetEntity="Offres")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idoffre", referencedColumnName="idoffre")
-     * })
+     * @return int
      */
-    private $idoffre;
+    public function getId()
+    {
+        return $this->id;
+    }
 
+    /**
+     * Set etatDemande
+     *
+     * @param boolean $etatDemande
+     *
+     * @return Demandes
+     */
+    public function setEtatDemande($etatDemande)
+    {
+        $this->etatDemande = $etatDemande;
 
+        return $this;
+    }
+
+    /**
+     * Get etatDemande
+     *
+     * @return bool
+     */
+    public function getEtatDemande()
+    {
+        return $this->etatDemande;
+    }
+
+    /**
+     * Set dateEntretien
+     *
+     * @param \DateTime $dateEntretien
+     *
+     * @return Demandes
+     */
+    public function setDateEntretien($dateEntretien)
+    {
+        $this->dateEntretien = $dateEntretien;
+
+        return $this;
+    }
+
+    /**
+     * Get dateEntretien
+     *
+     * @return \DateTime
+     */
+    public function getDateEntretien()
+    {
+        return $this->dateEntretien;
+    }
+
+    /**
+     * Set etatEntretien
+     *
+     * @param boolean $etatEntretien
+     *
+     * @return Demandes
+     */
+    public function setEtatEntretien($etatEntretien)
+    {
+        $this->etatEntretien = $etatEntretien;
+
+        return $this;
+    }
+
+    /**
+     * Get etatEntretien
+     *
+     * @return bool
+     */
+    public function getEtatEntretien()
+    {
+        return $this->etatEntretien;
+    }
+
+    /**
+     * Set confirmation
+     *
+     * @param boolean $confirmation
+     *
+     * @return Demandes
+     */
+    public function setConfirmation($confirmation)
+    {
+        $this->confirmation = $confirmation;
+
+        return $this;
+    }
+
+    /**
+     * Get confirmation
+     *
+     * @return bool
+     */
+    public function getConfirmation()
+    {
+        return $this->confirmation;
+    }
 }
 

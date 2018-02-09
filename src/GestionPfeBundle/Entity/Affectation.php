@@ -7,40 +7,89 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Affectation
  *
- * @ORM\Table(name="affectation", indexes={@ORM\Index(name="idsoutenance", columns={"idsoutenance"}), @ORM\Index(name="idenseignant", columns={"idenseignant"})})
- * @ORM\Entity
+ * @ORM\Table(name="affectation")
+ * @ORM\Entity(repositoryClass="GestionPfeBundle\Repository\AffectationRepository")
  */
 class Affectation
 {
     /**
-     * @var integer
+     * @var int
      *
-     * @ORM\Column(name="idaffectation", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idaffectation;
+    private $id;
 
     /**
-     * @var \Soutenance
-     *
-     * @ORM\ManyToOne(targetEntity="Soutenance")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idsoutenance", referencedColumnName="idsoutenance")
-     * })
-     */
-    private $idsoutenance;
-
-    /**
-     * @var \User
+     * @var
      *
      * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idenseignant", referencedColumnName="id")
-     * })
+     * @ORM\JoinColumn(name="idenseignant", referencedColumnName="id")
      */
-    private $idenseignant;
+    private $idEnseignant;
+
+    /**
+     * Affectation constructor.
+     * @param $idEnseignant
+     * @param $idSoutenance
+     */
+    public function __construct($idEnseignant, $idSoutenance)
+    {
+        $this->idEnseignant = $idEnseignant;
+        $this->idSoutenance = $idSoutenance;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdSoutenance()
+    {
+        return $this->idSoutenance;
+    }
+
+    /**
+     * @param mixed $idSoutenance
+     */
+    public function setIdSoutenance($idSoutenance)
+    {
+        $this->idSoutenance = $idSoutenance;
+    }
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="Soutenance")
+     * @ORM\JoinColumn(name="idsoutenance", referencedColumnName="id")
+     */
+    private $idSoutenance;
 
 
+    /**
+     * @return mixed
+     */
+    public function getIdEnseignant()
+    {
+        return $this->idEnseignant;
+    }
+
+    /**
+     * @param mixed $idEnseignant
+     */
+    public function setIdEnseignant($idEnseignant)
+    {
+        $this->idEnseignant = $idEnseignant;
+    }
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }
 

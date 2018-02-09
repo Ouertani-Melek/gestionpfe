@@ -7,78 +7,245 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Stage
  *
- * @ORM\Table(name="stage", indexes={@ORM\Index(name="identreprise", columns={"identreprise"}), @ORM\Index(name="idetudiant", columns={"idetudiant"}), @ORM\Index(name="idencadrant", columns={"idencadrant"})})
- * @ORM\Entity
+ * @ORM\Table(name="stage")
+ * @ORM\Entity(repositoryClass="GestionPfeBundle\Repository\StageRepository")
  */
 class Stage
 {
     /**
-     * @var integer
+     * @var int
      *
-     * @ORM\Column(name="idstage", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idstage;
+    private $id;
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="identreprise", referencedColumnName="id")
+     */
+    private $idEntreprise;
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="idencadrant", referencedColumnName="id")
+     */
+    private $idEncadrant;
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="idetudiant", referencedColumnName="id")
+     */
+    private $idEtudiant;
+
+    /**
+     * Stage constructor.
+     * @param $idEntreprise
+     * @param $idEncadrant
+     * @param $idEtudiant
+     * @param string $titreStage
+     * @param string $descreptif
+     * @param \DateTime $dateDebut
+     * @param \DateTime $dateFin
+     */
+    public function __construct($idEntreprise, $idEncadrant, $idEtudiant, $titreStage, $descreptif, \DateTime $dateDebut, \DateTime $dateFin)
+    {
+        $this->idEntreprise = $idEntreprise;
+        $this->idEncadrant = $idEncadrant;
+        $this->idEtudiant = $idEtudiant;
+        $this->titreStage = $titreStage;
+        $this->descreptif = $descreptif;
+        $this->dateDebut = $dateDebut;
+        $this->dateFin = $dateFin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdEntreprise()
+    {
+        return $this->idEntreprise;
+    }
+
+    /**
+     * @param mixed $idEntreprise
+     */
+    public function setIdEntreprise($idEntreprise)
+    {
+        $this->idEntreprise = $idEntreprise;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdEncadrant()
+    {
+        return $this->idEncadrant;
+    }
+
+    /**
+     * @param mixed $idEncadrant
+     */
+    public function setIdEncadrant($idEncadrant)
+    {
+        $this->idEncadrant = $idEncadrant;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdEtudiant()
+    {
+        return $this->idEtudiant;
+    }
+
+    /**
+     * @param mixed $idEtudiant
+     */
+    public function setIdEtudiant($idEtudiant)
+    {
+        $this->idEtudiant = $idEtudiant;
+    }
+
 
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", length=1000, nullable=false)
+     * @ORM\Column(name="titreStage", type="string", length=255)
      */
-    private $titre;
+    private $titreStage;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="descreptif", type="string", length=50000, nullable=true)
+     * @ORM\Column(name="Descreptif", type="string", length=5000)
      */
     private $descreptif;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datedebut", type="date", nullable=true)
+     * @ORM\Column(name="dateDebut", type="date")
      */
-    private $datedebut;
+    private $dateDebut;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datefin", type="date", nullable=true)
+     * @ORM\Column(name="dateFin", type="date", nullable=true)
      */
-    private $datefin;
+    private $dateFin;
+
 
     /**
-     * @var \User
+     * Get id
      *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="identreprise", referencedColumnName="id")
-     * })
+     * @return int
      */
-    private $identreprise;
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
-     * @var \User
+     * Set titreStage
      *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idetudiant", referencedColumnName="id")
-     * })
+     * @param string $titreStage
+     *
+     * @return Stage
      */
-    private $idetudiant;
+    public function setTitreStage($titreStage)
+    {
+        $this->titreStage = $titreStage;
+
+        return $this;
+    }
 
     /**
-     * @var \User
+     * Get titreStage
      *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idencadrant", referencedColumnName="id")
-     * })
+     * @return string
      */
-    private $idencadrant;
+    public function getTitreStage()
+    {
+        return $this->titreStage;
+    }
 
+    /**
+     * Set descreptif
+     *
+     * @param string $descreptif
+     *
+     * @return Stage
+     */
+    public function setDescreptif($descreptif)
+    {
+        $this->descreptif = $descreptif;
 
+        return $this;
+    }
+
+    /**
+     * Get descreptif
+     *
+     * @return string
+     */
+    public function getDescreptif()
+    {
+        return $this->descreptif;
+    }
+
+    /**
+     * Set dateDebut
+     *
+     * @param \DateTime $dateDebut
+     *
+     * @return Stage
+     */
+    public function setDateDebut($dateDebut)
+    {
+        $this->dateDebut = $dateDebut;
+
+        return $this;
+    }
+
+    /**
+     * Get dateDebut
+     *
+     * @return \DateTime
+     */
+    public function getDateDebut()
+    {
+        return $this->dateDebut;
+    }
+
+    /**
+     * Set dateFin
+     *
+     * @param \DateTime $dateFin
+     *
+     * @return Stage
+     */
+    public function setDateFin($dateFin)
+    {
+        $this->dateFin = $dateFin;
+
+        return $this;
+    }
+
+    /**
+     * Get dateFin
+     *
+     * @return \DateTime
+     */
+    public function getDateFin()
+    {
+        return $this->dateFin;
+    }
 }
 
