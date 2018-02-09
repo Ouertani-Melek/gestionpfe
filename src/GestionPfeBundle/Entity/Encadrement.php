@@ -7,51 +7,160 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Encadrement
  *
- * @ORM\Table(name="encadrement", indexes={@ORM\Index(name="idstage", columns={"idstage"})})
- * @ORM\Entity
+ * @ORM\Table(name="encadrement")
+ * @ORM\Entity(repositoryClass="GestionPfeBundle\Repository\EncadrementRepository")
  */
 class Encadrement
 {
     /**
-     * @var integer
+     * @var int
      *
-     * @ORM\Column(name="idencadrement", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idencadrement;
+    private $id;
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="Stage")
+     * @ORM\JoinColumn(name="idstage", referencedColumnName="id")
+     */
+    private $idStage;
 
     /**
-     * @var string
+     * @var bool
      *
-     * @ORM\Column(name="etat", type="string", length=100, nullable=true)
+     * @ORM\Column(name="Etat", type="boolean")
      */
     private $etat;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="pourcentage", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="pourcentage", type="float")
      */
     private $pourcentage;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datereunion", type="datetime", nullable=true)
+     * @ORM\Column(name="dateReunion", type="datetime")
      */
-    private $datereunion;
+    private $dateReunion;
 
     /**
-     * @var \Stage
-     *
-     * @ORM\ManyToOne(targetEntity="Stage")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idstage", referencedColumnName="idstage")
-     * })
+     * Encadrement constructor.
+     * @param $idStage
+     * @param bool $etat
+     * @param float $pourcentage
+     * @param \DateTime $dateReunion
      */
-    private $idstage;
+    public function __construct($idStage, $etat, $pourcentage, \DateTime $dateReunion)
+    {
+        $this->idStage = $idStage;
+        $this->etat = $etat;
+        $this->pourcentage = $pourcentage;
+        $this->dateReunion = $dateReunion;
+    }
 
 
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set etat
+     *
+     * @param boolean $etat
+     *
+     * @return Encadrement
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+
+        return $this;
+    }
+
+    /**
+     * Get etat
+     *
+     * @return bool
+     */
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdStage()
+    {
+        return $this->idStage;
+    }
+
+    /**
+     * @param mixed $idStage
+     */
+    public function setIdStage($idStage)
+    {
+        $this->idStage = $idStage;
+    }
+
+    /**
+     * Set pourcentage
+     *
+     * @param float $pourcentage
+     *
+     * @return Encadrement
+     */
+    public function setPourcentage($pourcentage)
+    {
+        $this->pourcentage = $pourcentage;
+
+        return $this;
+    }
+
+    /**
+     * Get pourcentage
+     *
+     * @return float
+     */
+    public function getPourcentage()
+    {
+        return $this->pourcentage;
+    }
+
+    /**
+     * Set dateReunion
+     *
+     * @param \DateTime $dateReunion
+     *
+     * @return Encadrement
+     */
+    public function setDateReunion($dateReunion)
+    {
+        $this->dateReunion = $dateReunion;
+
+        return $this;
+    }
+
+    /**
+     * Get dateReunion
+     *
+     * @return \DateTime
+     */
+    public function getDateReunion()
+    {
+        return $this->dateReunion;
+    }
 }
 
