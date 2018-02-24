@@ -6,6 +6,9 @@
     {% endblock title %}
 
 {% block body %}
+    <div class="container">
+
+    </div>
     <section class="main-bannerarea-full">
         <!-- Banner slide -->
         <div class="main-banner-area owl-carousel">
@@ -248,9 +251,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="course-btn">
-                                <a href="courses-deatail.html" class="theme-btn hvr-shutter-in-horizontal">Learn more</a>
-                                <a class="theme-btn-alt hvr-shutter-in-horizontal" href="#">Apply now</a>
+                            <div class="course-btn" id="post">
+                                <a href="courses-deatail.html" class="theme-btn hvr-shutter-in-horizontal" >Learn more</a>
+                                <a >
+                                    <button id="postuler" class="theme-btn-alt hvr-shutter-in-horizontal" onclick="archiveFunction()">Postuler</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -854,5 +859,93 @@
             </div>
         </div>
     </div><!-- // End Social area -->
+    <script src="{{ asset('Client/js/jqueryf.js') }}"></script>
+    <script src="{{ asset('Client/js/sweetalert2.all.min.js') }}"></script>
 
+
+    <script type="text/javascript">
+        $(function() {
+            //$.bootstrapGrowl("This is a test.");
+
+          /* setTimeout(function() {
+                $.bootstrapGrowl("This is another test.",
+                    { type: 'success' });
+            }, 1000);*/
+
+            /* setTimeout(function() {
+                 $.bootstrapGrowl("Danger, Danger!", {
+                     type: 'danger',
+                     align: 'center',
+                     width: 'auto',
+                     allow_dismiss: false
+                 });
+             }, 2000);
+
+             setTimeout(function() {
+                 $.bootstrapGrowl("Danger, Danger!", {
+                     type: 'info',
+                     align: 'left',
+                     stackup_spacing: 30
+                 });
+             }, 3000);*/
+        });
+        function archiveFunction() {
+ var reponse="";
+            swal({
+                    title: "Etes vous sure?",
+                    text: "Voulez vous vraiment postuler pour cet offre de stage?",
+                    type: "success",
+                    showCancelButton: true,
+                    confirmButtonColor: "#28dd44",
+                    cancelButtonColor:"#dd560e",
+                    confirmButtonText: " Oui, postuler !",
+                    cancelButtonText: "non abondonner!",
+                }).then(
+                function(isConfirm){
+                    if (isConfirm) {
+                        obj = new Object();
+                        obj["idOffre"]=1;
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ path('_postuler') }}",
+                            data: obj,
+                            dataType: "json",
+                            success: function (response)
+                            {
+
+                            }
+
+
+
+                        });
+
+                        if (reponse=="Remplissez Votre Cv avant de postuler !"){
+
+                            swal({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!',
+                                footer: '<a href>Why do I have this issue?</a>',
+                            })
+                        }
+                        else{
+                            $.bootstrapGrowl("Poustler avec success", { type: 'success' });
+                            $('#postuler').prop('disabled',true);
+                        }
+
+                    }
+                    else {
+                        console.log('Cancel mission of postulation !!')
+                        swal("Cancelled", "Your imaginary file is safe :)", "error");
+                    }
+                });
+        }
+        $(document).ready(function () {
+            $('#postuler').on('click',function () {
+
+
+            });
+
+        });
+    </script>
 {% endblock body %}

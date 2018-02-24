@@ -1,48 +1,626 @@
 {% extends "GestionPfeBundle::adminLayout.html.twig" %}
 
 {% block path %}
-    <a href="{{ path("gestion_pfe_admin") }}"
+    <a href="{{ path("gestion_pfe_admin") }}"></a>
 {% endblock path %}
-{% block sidebar %}
-    <div class="sidebar-container">
-        <div class="sidemenu-container navbar-collapse collapse fixed-menu">
-            <div id="remove-scroll">
-                <ul class="sidemenu  page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
-                    <li class="sidebar-toggler-wrapper hide">
-                        <div class="sidebar-toggler">
-                            <span></span>
-                        </div>
-                    </li>
-
-                    <li class="nav-item start ">
-                        <a href="#" class="nav-link nav-toggle">
-                            <i class="material-icons">dashboard</i>
-                            <span class="title">Dashboard</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub-menu">
-                            <li class="nav-item   ">
-                                <a href="index-2.html" class="nav-link ">
-                                    <span class="title">Dashboard 1</span>
-                                </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a href="dashboard2.html" class="nav-link ">
-                                    <span class="title">Dashboard 2</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="dashboard3.html" class="nav-link ">
-                                    <span class="title">Dashboard 3</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-
-                </ul>
+{% block body %}
+    <div class="page-content-wrapper">
+        <div class="page-content" style="min-height:1499px">
+            <div class="page-bar">
+                <div class="page-title-breadcrumb">
+                    <div class=" pull-left">
+                        <div class="page-title">Dashboard</div>
+                    </div>
+                    <ol class="breadcrumb page-breadcrumb pull-right">
+                        <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index-2.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        </li>
+                        <li class="active">Dashboard</li>
+                    </ol>
+                </div>
             </div>
+            <!-- start widget -->
+            <div class="state-overview">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <div class="info-box bg-b-green">
+                            <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Students</span>
+                                <span class="info-box-number">450</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 45%"></div>
+                                </div>
+                                <span class="progress-description">
+						                    45% Increase in 28 Days
+						                  </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <div class="info-box bg-b-yellow">
+                            <span class="info-box-icon push-bottom"><i class="material-icons">person</i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">New Students</span>
+                                <span class="info-box-number">155</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 40%"></div>
+                                </div>
+                                <span class="progress-description">
+						                    40% Increase in 28 Days
+						                  </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <div class="info-box bg-b-blue">
+                            <span class="info-box-icon push-bottom"><i class="material-icons">school</i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Course</span>
+                                <span class="info-box-number">52</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 85%"></div>
+                                </div>
+                                <span class="progress-description">
+						                    85% Increase in 28 Days
+						                  </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xl-3 col-md-6 col-12">
+                        <div class="info-box bg-b-pink">
+                            <span class="info-box-icon push-bottom"><i class="material-icons">monetization_on</i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Fees Collection</span>
+                                <span class="info-box-number">13,921</span><span>$</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 50%"></div>
+                                </div>
+                                <span class="progress-description">
+						                    50% Increase in 28 Days
+						                  </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+            <!-- end widget -->
+            <!-- chart start -->
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="card card-box">
+                        <div class="card-head">
+                            <header>University Survey</header>
+                            <div class="tools">
+                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                            </div>
+                        </div>
+                        <div class="card-body no-padding height-9">
+                            <div class="row"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                                <canvas id="canvas1" width="521" height="260" style="display: block; width: 521px; height: 260px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card card-box">
+                        <div class="card-head">
+                            <header>University Survey</header>
+                            <div class="tools">
+                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                            </div>
+                        </div>
+                        <div class="card-body no-padding height-9">
+                            <div class="row"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
+                                <canvas id="chartjs_pie" width="236" height="236" style="display: block; width: 236px; height: 236px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chart end -->
+            <!-- start course list -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                    <div class="blogThumb">
+                        <div class="thumb-center"><img class="img-responsive" alt="user" src="../assets/img/course/course1.jpg"></div>
+                        <div class="course-box">
+                            <h4>PHP Development Course</h4>
+                            <div class="text-muted"><span class="m-r-10">April 23</span>
+                                <a class="course-likes m-l-10" href="#"><i class="fa fa-heart-o"></i> 654</a>
+                            </div>
+                            <p><span><i class="ti-alarm-clock"></i> Duration: 6 Months</span></p>
+                            <p><span><i class="ti-user"></i> Professor: Jane Doe</span></p>
+                            <p><span><i class="fa fa-graduation-cap"></i> Students: 200+</span></p>
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-info" data-upgraded=",MaterialButton,MaterialRipple">Read More<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                    <div class="blogThumb">
+                        <div class="thumb-center"><img class="img-responsive" alt="user" src="../assets/img/course/course2.jpg"></div>
+                        <div class="course-box">
+                            <h4>PHP Development Course</h4>
+                            <div class="text-muted"><span class="m-r-10">April 23</span>
+                                <a class="course-likes m-l-10" href="#"><i class="fa fa-heart-o"></i> 654</a>
+                            </div>
+                            <p><span><i class="ti-alarm-clock"></i> Duration: 6 Months</span></p>
+                            <p><span><i class="ti-user"></i> Professor: Jane Doe</span></p>
+                            <p><span><i class="fa fa-graduation-cap"></i> Students: 200+</span></p>
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-info" data-upgraded=",MaterialButton,MaterialRipple">Read More<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                    <div class="blogThumb">
+                        <div class="thumb-center"><img class="img-responsive" alt="user" src="../assets/img/course/course3.jpg"></div>
+                        <div class="course-box">
+                            <h4>PHP Development Course</h4>
+                            <div class="text-muted"><span class="m-r-10">April 23</span>
+                                <a class="course-likes m-l-10" href="#"><i class="fa fa-heart-o"></i> 654</a>
+                            </div>
+                            <p><span><i class="ti-alarm-clock"></i> Duration: 6 Months</span></p>
+                            <p><span><i class="ti-user"></i> Professor: Jane Doe</span></p>
+                            <p><span><i class="fa fa-graduation-cap"></i> Students: 200+</span></p>
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-info" data-upgraded=",MaterialButton,MaterialRipple">Read More<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                    <div class="blogThumb">
+                        <div class="thumb-center"><img class="img-responsive" alt="user" src="../assets/img/course/course4.jpg"></div>
+                        <div class="course-box">
+                            <h4>PHP Development Course</h4>
+                            <div class="text-muted"><span class="m-r-10">April 23</span>
+                                <a class="course-likes m-l-10" href="#"><i class="fa fa-heart-o"></i> 654</a>
+                            </div>
+                            <p><span><i class="ti-alarm-clock"></i> Duration: 6 Months</span></p>
+                            <p><span><i class="ti-user"></i> Professor: Jane Doe</span></p>
+                            <p><span><i class="fa fa-graduation-cap"></i> Students: 200+</span></p>
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-info" data-upgraded=",MaterialButton,MaterialRipple">Read More<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End course list -->
+            <div class="row">
+                <!-- Quick Mail start -->
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="card-box">
+                        <div class="card-head">
+                            <header>Quick Mail</header>
+                            <button id="demo_menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+                                <i class="material-icons">more_vert</i>
+                            </button>
+                            <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" data-mdl-for="demo_menu-lower-right" data-upgraded=",MaterialMenu,MaterialRipple">
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">assistant_photo</i>Action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">print</i>Another action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">favorite</i>Something else here<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                </ul></div>
+                        </div>
+                        <div class="card-body ">
+                            <div class="mail-list">
+                                <div class="compose-mail">
+                                    <form method="post">
+                                        <div class="form-group">
+                                            <label for="to" class="">To:</label>
+                                            <input type="text" tabindex="1" id="to" class="form-control">
+                                            <div class="compose-options">
+                                                <a onclick="$(this).hide(); $('#cc').parent().removeClass('hidden'); $('#cc').focus();" href="javascript:;">Cc</a>
+                                                <a onclick="$(this).hide(); $('#bcc').parent().removeClass('hidden'); $('#bcc').focus();" href="javascript:;">Bcc</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group hidden">
+                                            <label for="cc" class="">Cc:</label>
+                                            <input type="text" tabindex="2" id="cc" class="form-control">
+                                        </div>
+                                        <div class="form-group hidden">
+                                            <label for="bcc" class="">Bcc:</label>
+                                            <input type="text" tabindex="2" id="bcc" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subject" class="">Subject:</label>
+                                            <input type="text" tabindex="1" id="subject" class="form-control">
+                                        </div>
+                                        <div>
+                                            <div id="summernote" style="display: none;"></div><div class="note-editor note-frame panel panel-default"><div class="note-dropzone">  <div class="note-dropzone-message"></div></div><div class="note-toolbar panel-heading"><div class="note-btn-group btn-group note-style"><div class="note-btn-group btn-group"><button type="button" class="note-btn btn btn-default btn-sm dropdown-toggle" tabindex="-1" data-toggle="dropdown"><i class="note-icon-magic"></i> <span class="note-icon-caret"></span></button><div class="dropdown-menu dropdown-style"><li><a href="#" data-value="p"><p>Normal</p></a></li><li><a href="#" data-value="blockquote"><blockquote>Quote</blockquote></a></li><li><a href="#" data-value="pre"><pre>Code</pre></a></li><li><a href="#" data-value="h1"><h1>Header 1</h1></a></li><li><a href="#" data-value="h2"><h2>Header 2</h2></a></li><li><a href="#" data-value="h3"><h3>Header 3</h3></a></li><li><a href="#" data-value="h4"><h4>Header 4</h4></a></li><li><a href="#" data-value="h5"><h5>Header 5</h5></a></li><li><a href="#" data-value="h6"><h6>Header 6</h6></a></li></div></div></div><div class="note-btn-group btn-group note-font"><button type="button" class="note-btn btn btn-default btn-sm note-btn-bold" tabindex="-1"><i class="note-icon-bold"></i></button><button type="button" class="note-btn btn btn-default btn-sm note-btn-underline" tabindex="-1"><i class="note-icon-underline"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-eraser"></i></button></div><div class="note-btn-group btn-group note-fontname"><div class="note-btn-group btn-group"><button type="button" class="note-btn btn btn-default btn-sm dropdown-toggle" tabindex="-1" data-toggle="dropdown"><span class="note-current-fontname">Poppins</span> <span class="note-icon-caret"></span></button><div class="dropdown-menu note-check dropdown-fontname"><li><a href="#" data-value="Arial"><i class="note-icon-menu-check"></i> <span style="font-family:Arial">Arial</span></a></li><li><a href="#" data-value="Arial Black"><i class="note-icon-menu-check"></i> <span style="font-family:Arial Black">Arial Black</span></a></li><li><a href="#" data-value="Comic Sans MS"><i class="note-icon-menu-check"></i> <span style="font-family:Comic Sans MS">Comic Sans MS</span></a></li><li><a href="#" data-value="Courier New"><i class="note-icon-menu-check"></i> <span style="font-family:Courier New">Courier New</span></a></li><li><a href="#" data-value="Helvetica"><i class="note-icon-menu-check"></i> <span style="font-family:Helvetica">Helvetica</span></a></li><li><a href="#" data-value="Impact"><i class="note-icon-menu-check"></i> <span style="font-family:Impact">Impact</span></a></li><li><a href="#" data-value="Tahoma"><i class="note-icon-menu-check"></i> <span style="font-family:Tahoma">Tahoma</span></a></li><li><a href="#" data-value="Times New Roman"><i class="note-icon-menu-check"></i> <span style="font-family:Times New Roman">Times New Roman</span></a></li><li><a href="#" data-value="Verdana"><i class="note-icon-menu-check"></i> <span style="font-family:Verdana">Verdana</span></a></li></div></div></div><div class="note-btn-group btn-group note-color"><div class="note-btn-group btn-group note-color"><button type="button" class="note-btn btn btn-default btn-sm note-current-color-button" tabindex="-1" data-backcolor="#FFFF00"><i class="note-icon-font note-recent-color" style="background-color: rgb(255, 255, 0);"></i></button><button type="button" class="note-btn btn btn-default btn-sm dropdown-toggle" tabindex="-1" data-toggle="dropdown"> <span class="note-icon-caret"></span></button><div class="dropdown-menu"><div class="note-palette">  <div class="note-palette-title">Background Color</div>  <div>    <button type="button" class="note-color-reset btn btn-light" data-event="backColor" data-value="inherit">Transparent    </button>  </div>  <div class="note-holder" data-event="backColor"><div class="note-color-palette"><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#000000" data-event="backColor" data-value="#000000" title="#000000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#424242" data-event="backColor" data-value="#424242" title="#424242" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#636363" data-event="backColor" data-value="#636363" title="#636363" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#9C9C94" data-event="backColor" data-value="#9C9C94" title="#9C9C94" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#CEC6CE" data-event="backColor" data-value="#CEC6CE" title="#CEC6CE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#EFEFEF" data-event="backColor" data-value="#EFEFEF" title="#EFEFEF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#F7F7F7" data-event="backColor" data-value="#F7F7F7" title="#F7F7F7" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFFFFF" data-event="backColor" data-value="#FFFFFF" title="#FFFFFF" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#FF0000" data-event="backColor" data-value="#FF0000" title="#FF0000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FF9C00" data-event="backColor" data-value="#FF9C00" title="#FF9C00" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFFF00" data-event="backColor" data-value="#FFFF00" title="#FFFF00" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#00FF00" data-event="backColor" data-value="#00FF00" title="#00FF00" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#00FFFF" data-event="backColor" data-value="#00FFFF" title="#00FFFF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#0000FF" data-event="backColor" data-value="#0000FF" title="#0000FF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#9C00FF" data-event="backColor" data-value="#9C00FF" title="#9C00FF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FF00FF" data-event="backColor" data-value="#FF00FF" title="#FF00FF" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#F7C6CE" data-event="backColor" data-value="#F7C6CE" title="#F7C6CE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFE7CE" data-event="backColor" data-value="#FFE7CE" title="#FFE7CE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFEFC6" data-event="backColor" data-value="#FFEFC6" title="#FFEFC6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#D6EFD6" data-event="backColor" data-value="#D6EFD6" title="#D6EFD6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#CEDEE7" data-event="backColor" data-value="#CEDEE7" title="#CEDEE7" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#CEE7F7" data-event="backColor" data-value="#CEE7F7" title="#CEE7F7" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#D6D6E7" data-event="backColor" data-value="#D6D6E7" title="#D6D6E7" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#E7D6DE" data-event="backColor" data-value="#E7D6DE" title="#E7D6DE" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E79C9C" data-event="backColor" data-value="#E79C9C" title="#E79C9C" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFC69C" data-event="backColor" data-value="#FFC69C" title="#FFC69C" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFE79C" data-event="backColor" data-value="#FFE79C" title="#FFE79C" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#B5D6A5" data-event="backColor" data-value="#B5D6A5" title="#B5D6A5" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#A5C6CE" data-event="backColor" data-value="#A5C6CE" title="#A5C6CE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#9CC6EF" data-event="backColor" data-value="#9CC6EF" title="#9CC6EF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#B5A5D6" data-event="backColor" data-value="#B5A5D6" title="#B5A5D6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#D6A5BD" data-event="backColor" data-value="#D6A5BD" title="#D6A5BD" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E76363" data-event="backColor" data-value="#E76363" title="#E76363" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#F7AD6B" data-event="backColor" data-value="#F7AD6B" title="#F7AD6B" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFD663" data-event="backColor" data-value="#FFD663" title="#FFD663" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#94BD7B" data-event="backColor" data-value="#94BD7B" title="#94BD7B" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#73A5AD" data-event="backColor" data-value="#73A5AD" title="#73A5AD" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#6BADDE" data-event="backColor" data-value="#6BADDE" title="#6BADDE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#8C7BC6" data-event="backColor" data-value="#8C7BC6" title="#8C7BC6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#C67BA5" data-event="backColor" data-value="#C67BA5" title="#C67BA5" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#CE0000" data-event="backColor" data-value="#CE0000" title="#CE0000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#E79439" data-event="backColor" data-value="#E79439" title="#E79439" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#EFC631" data-event="backColor" data-value="#EFC631" title="#EFC631" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#6BA54A" data-event="backColor" data-value="#6BA54A" title="#6BA54A" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#4A7B8C" data-event="backColor" data-value="#4A7B8C" title="#4A7B8C" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#3984C6" data-event="backColor" data-value="#3984C6" title="#3984C6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#634AA5" data-event="backColor" data-value="#634AA5" title="#634AA5" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#A54A7B" data-event="backColor" data-value="#A54A7B" title="#A54A7B" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#9C0000" data-event="backColor" data-value="#9C0000" title="#9C0000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#B56308" data-event="backColor" data-value="#B56308" title="#B56308" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#BD9400" data-event="backColor" data-value="#BD9400" title="#BD9400" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#397B21" data-event="backColor" data-value="#397B21" title="#397B21" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#104A5A" data-event="backColor" data-value="#104A5A" title="#104A5A" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#085294" data-event="backColor" data-value="#085294" title="#085294" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#311873" data-event="backColor" data-value="#311873" title="#311873" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#731842" data-event="backColor" data-value="#731842" title="#731842" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#630000" data-event="backColor" data-value="#630000" title="#630000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#7B3900" data-event="backColor" data-value="#7B3900" title="#7B3900" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#846300" data-event="backColor" data-value="#846300" title="#846300" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#295218" data-event="backColor" data-value="#295218" title="#295218" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#083139" data-event="backColor" data-value="#083139" title="#083139" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#003163" data-event="backColor" data-value="#003163" title="#003163" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#21104A" data-event="backColor" data-value="#21104A" title="#21104A" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#4A1031" data-event="backColor" data-value="#4A1031" title="#4A1031" data-toggle="button" tabindex="-1"></button></div></div></div></div><div class="note-palette">  <div class="note-palette-title">Foreground Color</div>  <div>    <button type="button" class="note-color-reset btn btn-light" data-event="removeFormat" data-value="foreColor">Reset to default    </button>  </div>  <div class="note-holder" data-event="foreColor"><div class="note-color-palette"><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#000000" data-event="foreColor" data-value="#000000" title="#000000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#424242" data-event="foreColor" data-value="#424242" title="#424242" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#636363" data-event="foreColor" data-value="#636363" title="#636363" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#9C9C94" data-event="foreColor" data-value="#9C9C94" title="#9C9C94" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#CEC6CE" data-event="foreColor" data-value="#CEC6CE" title="#CEC6CE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#EFEFEF" data-event="foreColor" data-value="#EFEFEF" title="#EFEFEF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#F7F7F7" data-event="foreColor" data-value="#F7F7F7" title="#F7F7F7" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFFFFF" data-event="foreColor" data-value="#FFFFFF" title="#FFFFFF" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#FF0000" data-event="foreColor" data-value="#FF0000" title="#FF0000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FF9C00" data-event="foreColor" data-value="#FF9C00" title="#FF9C00" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFFF00" data-event="foreColor" data-value="#FFFF00" title="#FFFF00" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#00FF00" data-event="foreColor" data-value="#00FF00" title="#00FF00" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#00FFFF" data-event="foreColor" data-value="#00FFFF" title="#00FFFF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#0000FF" data-event="foreColor" data-value="#0000FF" title="#0000FF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#9C00FF" data-event="foreColor" data-value="#9C00FF" title="#9C00FF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FF00FF" data-event="foreColor" data-value="#FF00FF" title="#FF00FF" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#F7C6CE" data-event="foreColor" data-value="#F7C6CE" title="#F7C6CE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFE7CE" data-event="foreColor" data-value="#FFE7CE" title="#FFE7CE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFEFC6" data-event="foreColor" data-value="#FFEFC6" title="#FFEFC6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#D6EFD6" data-event="foreColor" data-value="#D6EFD6" title="#D6EFD6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#CEDEE7" data-event="foreColor" data-value="#CEDEE7" title="#CEDEE7" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#CEE7F7" data-event="foreColor" data-value="#CEE7F7" title="#CEE7F7" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#D6D6E7" data-event="foreColor" data-value="#D6D6E7" title="#D6D6E7" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#E7D6DE" data-event="foreColor" data-value="#E7D6DE" title="#E7D6DE" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E79C9C" data-event="foreColor" data-value="#E79C9C" title="#E79C9C" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFC69C" data-event="foreColor" data-value="#FFC69C" title="#FFC69C" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFE79C" data-event="foreColor" data-value="#FFE79C" title="#FFE79C" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#B5D6A5" data-event="foreColor" data-value="#B5D6A5" title="#B5D6A5" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#A5C6CE" data-event="foreColor" data-value="#A5C6CE" title="#A5C6CE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#9CC6EF" data-event="foreColor" data-value="#9CC6EF" title="#9CC6EF" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#B5A5D6" data-event="foreColor" data-value="#B5A5D6" title="#B5A5D6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#D6A5BD" data-event="foreColor" data-value="#D6A5BD" title="#D6A5BD" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#E76363" data-event="foreColor" data-value="#E76363" title="#E76363" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#F7AD6B" data-event="foreColor" data-value="#F7AD6B" title="#F7AD6B" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#FFD663" data-event="foreColor" data-value="#FFD663" title="#FFD663" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#94BD7B" data-event="foreColor" data-value="#94BD7B" title="#94BD7B" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#73A5AD" data-event="foreColor" data-value="#73A5AD" title="#73A5AD" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#6BADDE" data-event="foreColor" data-value="#6BADDE" title="#6BADDE" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#8C7BC6" data-event="foreColor" data-value="#8C7BC6" title="#8C7BC6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#C67BA5" data-event="foreColor" data-value="#C67BA5" title="#C67BA5" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#CE0000" data-event="foreColor" data-value="#CE0000" title="#CE0000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#E79439" data-event="foreColor" data-value="#E79439" title="#E79439" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#EFC631" data-event="foreColor" data-value="#EFC631" title="#EFC631" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#6BA54A" data-event="foreColor" data-value="#6BA54A" title="#6BA54A" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#4A7B8C" data-event="foreColor" data-value="#4A7B8C" title="#4A7B8C" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#3984C6" data-event="foreColor" data-value="#3984C6" title="#3984C6" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#634AA5" data-event="foreColor" data-value="#634AA5" title="#634AA5" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#A54A7B" data-event="foreColor" data-value="#A54A7B" title="#A54A7B" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#9C0000" data-event="foreColor" data-value="#9C0000" title="#9C0000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#B56308" data-event="foreColor" data-value="#B56308" title="#B56308" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#BD9400" data-event="foreColor" data-value="#BD9400" title="#BD9400" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#397B21" data-event="foreColor" data-value="#397B21" title="#397B21" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#104A5A" data-event="foreColor" data-value="#104A5A" title="#104A5A" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#085294" data-event="foreColor" data-value="#085294" title="#085294" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#311873" data-event="foreColor" data-value="#311873" title="#311873" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#731842" data-event="foreColor" data-value="#731842" title="#731842" data-toggle="button" tabindex="-1"></button></div><div class="note-color-row"><button type="button" class="note-color-btn" style="background-color:#630000" data-event="foreColor" data-value="#630000" title="#630000" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#7B3900" data-event="foreColor" data-value="#7B3900" title="#7B3900" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#846300" data-event="foreColor" data-value="#846300" title="#846300" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#295218" data-event="foreColor" data-value="#295218" title="#295218" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#083139" data-event="foreColor" data-value="#083139" title="#083139" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#003163" data-event="foreColor" data-value="#003163" title="#003163" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#21104A" data-event="foreColor" data-value="#21104A" title="#21104A" data-toggle="button" tabindex="-1"></button><button type="button" class="note-color-btn" style="background-color:#4A1031" data-event="foreColor" data-value="#4A1031" title="#4A1031" data-toggle="button" tabindex="-1"></button></div></div></div></div></div></div></div><div class="note-btn-group btn-group note-para"><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-unorderedlist"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-orderedlist"></i></button><div class="note-btn-group btn-group"><button type="button" class="note-btn btn btn-default btn-sm dropdown-toggle" tabindex="-1" data-toggle="dropdown"><i class="note-icon-align-left"></i> <span class="note-icon-caret"></span></button><div class="dropdown-menu"><div class="note-btn-group btn-group note-align"><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-align-left"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-align-center"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-align-right"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-align-justify"></i></button></div><div class="note-btn-group btn-group note-list"><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-align-outdent"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-align-indent"></i></button></div></div></div></div><div class="note-btn-group btn-group note-table"><div class="note-btn-group btn-group"><button type="button" class="note-btn btn btn-default btn-sm dropdown-toggle" tabindex="-1" data-toggle="dropdown"><i class="note-icon-table"></i> <span class="note-icon-caret"></span></button><div class="dropdown-menu note-table"><div class="note-dimension-picker">  <div class="note-dimension-picker-mousecatcher" data-event="insertTable" data-value="1x1" style="width: 10em; height: 10em;"></div>  <div class="note-dimension-picker-highlighted"></div>  <div class="note-dimension-picker-unhighlighted"></div></div><div class="note-dimension-display">1 x 1</div></div></div></div><div class="note-btn-group btn-group note-insert"><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-link"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-picture"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-video"></i></button></div><div class="note-btn-group btn-group note-view"><button type="button" class="note-btn btn btn-default btn-sm btn-fullscreen" tabindex="-1"><i class="note-icon-arrows-alt"></i></button><button type="button" class="note-btn btn btn-default btn-sm btn-codeview" tabindex="-1"><i class="note-icon-code"></i></button><button type="button" class="note-btn btn btn-default btn-sm" tabindex="-1"><i class="note-icon-question"></i></button></div></div><div class="note-editing-area"><div class="note-handle"><div class="note-control-selection"><div class="note-control-selection-bg"></div><div class="note-control-holder note-control-nw"></div><div class="note-control-holder note-control-ne"></div><div class="note-control-holder note-control-sw"></div><div class="note-control-sizing note-control-se"></div><div class="note-control-selection-info"></div></div></div><textarea class="note-codable"></textarea><div class="note-editable panel-body" contenteditable="true" style="height: 200px;"><p><br></p></div></div><div class="note-statusbar">  <div class="note-resizebar">    <div class="note-icon-bar"></div>    <div class="note-icon-bar"></div>    <div class="note-icon-bar"></div>  </div></div><div class="modal link-dialog" aria-hidden="false" tabindex="-1"><div class="modal-dialog">  <div class="modal-content">    <div class="modal-header">      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>      <h4 class="modal-title">Insert Link</h4>    </div>    <div class="modal-body"><div class="form-group note-form-group"><label class="note-form-label">Text to display</label><input class="note-link-text form-control  note-form-control  note-input" type="text"></div><div class="form-group note-form-group"><label class="note-form-label">To what URL should this link go?</label><input class="note-link-url form-control note-form-control note-input" type="text" value="http://"></div><div class="checkbox"> <label for="sn-checkbox-open-in-new-window"> <input type="checkbox" id="sn-checkbox-open-in-new-window" checked="">Open in new window</label></div></div>    <div class="modal-footer"><button href="#" class="btn btn-primary note-btn note-btn-primary note-link-btn disabled" disabled="">Insert Link</button></div>  </div></div></div><div class="modal" aria-hidden="false" tabindex="-1"><div class="modal-dialog">  <div class="modal-content">    <div class="modal-header">      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>      <h4 class="modal-title">Insert Image</h4>    </div>    <div class="modal-body"><div class="form-group note-form-group note-group-select-from-files"><label class="note-form-label">Select from files</label><input class="note-image-input form-control note-form-control note-input" type="file" name="files" accept="image/*" multiple="multiple"></div><div class="form-group note-group-image-url" style="overflow:auto;"><label class="note-form-label">Image URL</label><input class="note-image-url form-control note-form-control note-input  col-md-12" type="text"></div></div>    <div class="modal-footer"><button href="#" class="btn btn-primary note-btn note-btn-primary note-image-btn disabled" disabled="">Insert Image</button></div>  </div></div></div><div class="modal" aria-hidden="false" tabindex="-1"><div class="modal-dialog">  <div class="modal-content">    <div class="modal-header">      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>      <h4 class="modal-title">Insert Video</h4>    </div>    <div class="modal-body"><div class="form-group note-form-group row-fluid"><label class="note-form-label">Video URL? <small class="text-muted">(YouTube, Vimeo, Vine, Instagram, DailyMotion or Youku)</small></label><input class="note-video-url form-control  note-form-control note-input span12" type="text"></div></div>    <div class="modal-footer"><button href="#" class="btn btn-primary note-btn note-btn-primary  note-video-btn disabled" disabled="">Insert Video</button></div>  </div></div></div><div class="modal" aria-hidden="false" tabindex="-1"><div class="modal-dialog">  <div class="modal-content">    <div class="modal-header">      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>      <h4 class="modal-title">Help</h4>    </div>    <div class="modal-body" style="max-height: 300px; overflow: scroll;"><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>ENTER</kbd></label><span>Insert Paragraph</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+Z</kbd></label><span>Undoes the last command</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+Y</kbd></label><span>Redoes the last command</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>TAB</kbd></label><span>Tab</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>SHIFT+TAB</kbd></label><span>Untab</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+B</kbd></label><span>Set a bold style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+I</kbd></label><span>Set a italic style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+U</kbd></label><span>Set a underline style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+S</kbd></label><span>Set a strikethrough style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+BACKSLASH</kbd></label><span>Clean a style</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+L</kbd></label><span>Set left align</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+E</kbd></label><span>Set center align</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+R</kbd></label><span>Set right align</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+J</kbd></label><span>Set full align</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+NUM7</kbd></label><span>Toggle unordered list</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+SHIFT+NUM8</kbd></label><span>Toggle ordered list</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+LEFTBRACKET</kbd></label><span>Outdent on current paragraph</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+RIGHTBRACKET</kbd></label><span>Indent on current paragraph</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM0</kbd></label><span>Change current block's format as a paragraph(P tag)</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM1</kbd></label><span>Change current block's format as H1</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM2</kbd></label><span>Change current block's format as H2</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM3</kbd></label><span>Change current block's format as H3</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM4</kbd></label><span>Change current block's format as H4</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM5</kbd></label><span>Change current block's format as H5</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+NUM6</kbd></label><span>Change current block's format as H6</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+ENTER</kbd></label><span>Insert horizontal rule</span><div class="help-list-item"></div><label style="width: 180px; margin-right: 10px;"><kbd>CTRL+K</kbd></label><span>Show Link Dialog</span></div>    <div class="modal-footer"><p class="text-center"><a href="http://summernote.org/" target="_blank">Summernote 0.8.8</a> · <a href="https://github.com/summernote/summernote" target="_blank">Project</a> · <a href="https://github.com/summernote/summernote/issues" target="_blank">Issues</a></p></div>  </div></div></div></div>
+                                            <input type="file" class="default" multiple="">
+                                        </div>
+                                        <!--   <div class="btn-group margin-top-20 ">
+                                           <button class="btn btn-primary btn-sm margin-right-10"><i class="fa fa-check"></i> Send</button>
+                                          </div> -->
+                                        <div class="box-footer clearfix">
+                                            <button type="button" class="mdl-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-primary pull-right" data-upgraded=",MaterialRipple">Send <i class="fa fa-paper-plane-o"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quick Mail end -->
+                <!-- Activity feed start -->
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="card-box">
+                        <div class="card-head">
+                            <header>Activity Feed</header>
+                            <button id="feedMenu" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+                                <i class="material-icons">more_vert</i>
+                            </button>
+                            <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" data-mdl-for="feedMenu" data-upgraded=",MaterialMenu,MaterialRipple">
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">assistant_photo</i>Action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">print</i>Another action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">favorite</i>Something else here<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                </ul></div>
+                        </div>
+                        <div class="card-body ">
+                            <ul class="feed-blog">
+                                <li class="active-feed">
+                                    <div class="feed-user-img">
+                                        <img src="../assets/img/std/std1.jpg" class="img-radius " alt="User-Profile-Image">
+                                    </div>
+                                    <h6>
+                                        <span class="label label-sm label-danger">File</span> Eddie uploaded
+                                        new files: <small class="text-muted">4 hours ago</small>
+                                    </h6>
+                                    <p class="m-b-15 m-t-15">
+                                        hii <b> @everone</b> Please find attach documents related to function.
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-auto text-center">
+                                            <img src="../assets/img/mega-img1.jpg" alt="img" class="img-fluid img-100">
+                                            <h6 class="m-t-15 m-b-0">Doc 1</h6>
+                                            <p class="text-muted m-b-0">
+                                                <small>PNG-145KB</small>
+                                            </p>
+                                        </div>
+                                        <div class="col-auto text-center">
+                                            <img src="../assets/img/mega-img3.jpg" alt="img" class="img-fluid img-100">
+                                            <h6 class="m-t-15 m-b-0">Doc 2</h6>
+                                            <p class="text-muted m-b-0">
+                                                <small>PNG-234KB</small>
+                                            </p>
+                                        </div>
+                                        <div class="col-auto text-center">
+                                            <img src="../assets/img/mega-img2.jpg" alt="img" class="img-fluid img-100">
+                                            <h6 class="m-t-15 m-b-0">Doc 3</h6>
+                                            <p class="text-muted m-b-0">
+                                                <small>PNG-450KB</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="diactive-feed">
+                                    <div class="feed-user-img">
+                                        <img src="../assets/img/std/std2.jpg" class="img-radius " alt="User-Profile-Image">
+                                    </div>
+                                    <h6>
+                                        <span class="label label-sm label-success">Task </span> Jalpa post a new task: <span class="green-color">
+												Please add new student details.</span><small class="text-muted">5 hours
+                                            ago</small>
+                                    </h6>
+                                </li>
+                                <li class="diactive-feed">
+                                    <div class="feed-user-img">
+                                        <img src="../assets/img/std/std3.jpg" class="img-radius " alt="User-Profile-Image">
+                                    </div>
+                                    <h6>
+                                        <span class="label label-sm label-primary">comment</span> Jalpa post a new task: <span class="text-c-green">Please add new student details.</span> <small class="text-muted">6 hours ago</small>
+                                    </h6>
+                                    <p class="m-b-15 m-t-15">
+                                        hii <b> @everone</b> I have completed already please check it.
+                                    </p>
+                                </li>
+                                <li class="active-feed">
+                                    <div class="feed-user-img">
+                                        <img src="../assets/img/std/std4.jpg" class="img-radius " alt="User-Profile-Image">
+                                    </div>
+                                    <h6>
+                                        <span class="label label-sm label-warning">Task</span>Jayesh marked :
+                                        <span class="text-c-green"> Ready for next lecture</span><small class="text-muted">7 hours ago</small>
+                                    </h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Activity feed end -->
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="card-box">
+                        <div class="card-head">
+                            <header>Exam Toppers</header>
+                            <button id="panel-button8" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+                                <i class="material-icons">more_vert</i>
+                            </button>
+                            <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" data-mdl-for="panel-button8" data-upgraded=",MaterialMenu,MaterialRipple">
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">assistant_photo</i>Action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">print</i>Another action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">favorite</i>Something else here<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                </ul></div>
+                        </div>
+                        <div class="card-body ">
+                            <div class="table-responsive">
+                                <table class="table table-striped custom-table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Roll No</th>
+                                        <th>Name</th>
+                                        <th>Graph</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>23</td>
+                                        <td>John Smith</td>
+                                        <td><div id="sparkline"><canvas width="39" height="21" style="display: inline-block; width: 39px; height: 21px; vertical-align: top;"></canvas></div></td>
+                                        <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit">
+                                                <i class="fa fa-check"></i></a>
+                                            <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip">
+                                                <i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Sneha Pandit</td>
+                                        <td><div id="sparkline1"><canvas width="59" height="21" style="display: inline-block; width: 59px; height: 21px; vertical-align: top;"></canvas></div></td>
+                                        <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit">
+                                                <i class="fa fa-check"></i></a>
+                                            <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip">
+                                                <i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>45</td>
+                                        <td>Sarah Smith</td>
+                                        <td><div id="sparkline2"><canvas width="39" height="21" style="display: inline-block; width: 39px; height: 21px; vertical-align: top;"></canvas></div></td>
+                                        <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit">
+                                                <i class="fa fa-check"></i></a>
+                                            <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip">
+                                                <i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>34</td>
+                                        <td>John Deo</td>
+                                        <td><div id="sparkline3"><canvas width="36" height="21" style="display: inline-block; width: 36px; height: 21px; vertical-align: top;"></canvas></div></td>
+                                        <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit">
+                                                <i class="fa fa-check"></i></a>
+                                            <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip">
+                                                <i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Jay Soni</td>
+                                        <td><div id="sparkline4"><canvas width="20" height="21" style="display: inline-block; width: 20px; height: 21px; vertical-align: top;"></canvas></div></td>
+                                        <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit">
+                                                <i class="fa fa-check"></i></a>
+                                            <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip">
+                                                <i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="card-box">
+                        <div class="card-head">
+                            <header>Todo List</header>
+                            <button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
+                                <i class="material-icons">more_vert</i>
+                            </button>
+                            <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events" data-mdl-for="panel-button" data-upgraded=",MaterialMenu,MaterialRipple">
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">assistant_photo</i>Action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">print</i>Another action<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                    <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1" data-upgraded=",MaterialRipple"><i class="material-icons">favorite</i>Something else here<span class="mdl-menu__item-ripple-container"><span class="mdl-ripple"></span></span></li>
+                                </ul></div>
+                        </div>
+                        <div class="card-body ">
+                            <ul class="to-do-list ui-sortable" id="sortable-todo">
+                                <li class="clearfix">
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check1">
+                                        <label for="todo-check1"></label>
+                                    </div>
+                                    <p class="todo-title">Add fees details in system
+                                    </p>
+                                    <div class="todo-actionlist pull-right clearfix">
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check2">
+                                        <label for="todo-check2"></label>
+                                    </div>
+                                    <p class="todo-title">Announcement for holiday
+                                    </p>
+                                    <div class="todo-actionlist pull-right clearfix">
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check3">
+                                        <label for="todo-check3"></label>
+                                    </div>
+                                    <p class="todo-title">call bus driver</p>
+                                    <div class="todo-actionlist pull-right clearfix">
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check4">
+                                        <label for="todo-check4"></label>
+                                    </div>
+                                    <p class="todo-title">School picnic</p>
+                                    <div class="todo-actionlist pull-right clearfix">
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="todo-check pull-left">
+                                        <input type="checkbox" value="None" id="todo-check5">
+                                        <label for="todo-check5"></label>
+                                    </div>
+                                    <p class="todo-title">Exam time table generate
+                                    </p>
+                                    <div class="todo-actionlist pull-right clearfix">
+                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- start new student list -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="card  card-box">
+                        <div class="card-head">
+                            <header>New Student List</header>
+                            <div class="tools">
+                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                            </div>
+                        </div>
+                        <div class="card-body ">
+                            <div class="table-wrap">
+                                <div class="table-responsive">
+                                    <table class="table display product-overview mb-30" id="support_table">
+                                        <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Name</th>
+                                            <th>Assigned Professor</th>
+                                            <th>Date Of Admit</th>
+                                            <th>Fees</th>
+                                            <th>Branch</th>
+                                            <th>Edit</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Jens Brincker</td>
+                                            <td>Kenny Josh</td>
+                                            <td>27/05/2016</td>
+                                            <td>
+                                                <span class="label label-sm label-success">paid</span>
+                                            </td>
+                                            <td>Mechanical</td>
+                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit"><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Mark Hay</td>
+                                            <td> Mark</td>
+                                            <td>26/05/2017</td>
+                                            <td>
+                                                <span class="label label-sm label-warning">unpaid </span>
+                                            </td>
+                                            <td>Science</td>
+                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit"><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Anthony Davie</td>
+                                            <td>Cinnabar</td>
+                                            <td>21/05/2016</td>
+                                            <td>
+                                                <span class="label label-sm label-success ">paid</span>
+                                            </td>
+                                            <td>Commerce</td>
+                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit"><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>David Perry</td>
+                                            <td>Felix </td>
+                                            <td>20/04/2016</td>
+                                            <td>
+                                                <span class="label label-sm label-danger">unpaid</span>
+                                            </td>
+                                            <td>Mechanical</td>
+                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit"><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Anthony Davie</td>
+                                            <td>Beryl</td>
+                                            <td>24/05/2016</td>
+                                            <td>
+                                                <span class="label label-sm label-success ">paid</span>
+                                            </td>
+                                            <td>M.B.A.</td>
+                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit"><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Alan Gilchrist</td>
+                                            <td>Joshep</td>
+                                            <td>22/05/2016</td>
+                                            <td>
+                                                <span class="label label-sm label-warning ">unpaid</span>
+                                            </td>
+                                            <td>Science</td>
+                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit"><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Mark Hay</td>
+                                            <td>Jayesh</td>
+                                            <td>18/06/2016</td>
+                                            <td>
+                                                <span class="label label-sm label-success ">paid</span>
+                                            </td>
+                                            <td>Commerce</td>
+                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit"><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>Sue Woodger</td>
+                                            <td>Sharma</td>
+                                            <td>17/05/2016</td>
+                                            <td>
+                                                <span class="label label-sm label-danger">unpaid</span>
+                                            </td>
+                                            <td>Mechanical</td>
+                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit"><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end new student list -->
         </div>
     </div>
-
-{% endblock sidebar %}
+{% endblock body %}

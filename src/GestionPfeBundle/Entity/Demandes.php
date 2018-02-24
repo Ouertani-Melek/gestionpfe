@@ -24,23 +24,39 @@ class Demandes
     /**
      * @var bool
      *
-     * @ORM\Column(name="etatDemande", type="boolean")
+     * @ORM\Column(name="etatDemande", type="boolean",nullable=true)
      */
     private $etatDemande;
+
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateEntretien", type="date", nullable=true)
+     * @ORM\Column(name="dateEntretien", type="datetime", nullable=true)
      */
     private $dateEntretien;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateDemande", type="datetime", nullable=true)
+     */
+    private $dateDemande;
+
+    /**
      * @var bool
      *
-     * @ORM\Column(name="etatEntretien", type="boolean")
+     * @ORM\Column(name="etatEntretien", type="boolean",nullable=true)
      */
     private $etatEntretien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="methodeCommunication", type="string", nullable=true)
+     */
+    private $methodeCommunication;
+
 
     /**
      * @var bool
@@ -201,5 +217,39 @@ class Demandes
     {
         return $this->confirmation;
     }
+
+    /**
+     * @return string
+     */
+    public function getMethodeCommunication()
+    {
+        return $this->methodeCommunication;
+    }
+
+    /**
+     * @param string $methodeCommunication
+     */
+    public function setMethodeCommunication($methodeCommunication)
+    {
+        $this->methodeCommunication = $methodeCommunication;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateDemande()
+    {
+        return $this->dateDemande;
+    }
+
+    /**
+     * @param \DateTime $dateDemande
+     */
+    public function setDateDemande($dateDemande)
+    {
+        $this->dateDemande = $dateDemande;
+    }
+
+
 }
 

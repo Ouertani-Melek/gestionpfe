@@ -64,24 +64,7 @@ class Offre
      */
     private $duree;
 
-    /**
-     * Offre constructor.
-     * @param $idUser
-     * @param bool $etat
-     * @param string $titre
-     * @param string $description
-     * @param int $nbrDemandes
-     * @param int $duree
-     */
-    public function __construct( $idUser, $etat, $titre, $description, $nbrDemandes, $duree)
-    {
-        $this->idUser = $idUser;
-        $this->etat = $etat;
-        $this->titre = $titre;
-        $this->description = $description;
-        $this->nbrDemandes = $nbrDemandes;
-        $this->duree = $duree;
-    }
+
 
 
     /**

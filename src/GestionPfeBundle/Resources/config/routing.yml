@@ -11,3 +11,96 @@ gestion_pfe_entreprisehomepage:
 gestion_pfe_enseignanthomepage:
     path:     /enseignant
     defaults: { _controller: GestionPfeBundle:Default:indexEnseignant }
+
+_remplir_cv:
+    path:     /RemplirCv
+    defaults: { _controller: GestionPfeBundle:Cv:RemplirCv }
+_afficheform_cv:
+    path:     /afficheformcv
+    defaults: { _controller: GestionPfeBundle:Cv:afficheformcv }
+
+_affiche_cv:
+    path:     /AfficheCv
+    defaults: { _controller: GestionPfeBundle:Cv:AfficheCv }
+
+_modifier_cv:
+    path:     /ModifierCv/{id}
+    defaults: { _controller: GestionPfeBundle:Cv:ModifierCv }
+
+ajout_langue:
+    path:     /ajoutLangue
+    defaults: { _controller: GestionPfeBundle:langues:ajoutLangue }
+
+_modifier_langue:
+    path:     /ModifierLangue
+    defaults: { _controller: GestionPfeBundle:langues:ModifierLangue }
+
+supprimer_langue:
+    path:     /supprimerLangue
+    defaults: { _controller: GestionPfeBundle:langues:supprimerLangue }
+
+ajout_formation:
+    path:     /ajoutFormation
+    defaults: { _controller: GestionPfeBundle:formations:ajoutFormation }
+
+modifier_formation:
+    path:     /modifierFormation
+    defaults: { _controller: GestionPfeBundle:formations:modifierFormation }
+
+supprimer_formation:
+    path:     /supprimerFormation
+    defaults: { _controller: GestionPfeBundle:formations:supprimerFormation }
+
+ajout_centre:
+    path:     /ajoutCentre
+    defaults: { _controller: GestionPfeBundle:centres:ajoutCentre }
+
+modifier_centre:
+    path:     /modifierCentre
+    defaults: { _controller: GestionPfeBundle:centres:modifierCentre }
+
+supprimer_centre:
+    path:     /supprimerCentre
+    defaults: { _controller: GestionPfeBundle:centres:supprimerCentre }
+
+ajout_competence:
+    path:     /ajoutCompetence
+    defaults: { _controller: GestionPfeBundle:competences:ajoutCompetence }
+
+supprimer_competence:
+    path:     /supprimerCompetence
+    defaults: { _controller: GestionPfeBundle:competences:supprimerCompetence }
+
+modifier_competence:
+    path:     /modifierCompetence
+    defaults: { _controller: GestionPfeBundle:competences:modifierCompetence }
+
+_postuler:
+    path:     /Postuler
+    defaults: { _controller: GestionPfeBundle:Demandes:Postuler }
+
+_supprimer_demande:
+    path:     /SupprimerDemande
+    defaults: { _controller: GestionPfeBundle:Demandes:SupprimerDemande }
+
+_afficher_demande:
+    path:     /AfficherDemande
+    defaults: { _controller: GestionPfeBundle:Demandes:afficherDemande }
+rechercheajax:
+    path:     /rechercheajax
+    defaults: { _controller: GestionPfeBundle:Demandes:rechercheajax }
+listeAccepte:
+    path:     /listeaccepte
+    defaults: { _controller: GestionPfeBundle:Demandes:listAccepte }
+ValiderEntretien:
+    path:     /ValiderEntretien
+    defaults: { _controller: GestionPfeBundle:Demandes:ValiderEntretien }
+SupprimerEntretien:
+    path:     /SupprimerEntretien
+    defaults: { _controller: GestionPfeBundle:Demandes:SupprimerEntretien }
+FixerEntretien:
+    path:     /FixerEntretien
+    defaults: { _controller: GestionPfeBundle:Demandes:FixerEntretien }
+pdfAction:
+    path:     /pdf
+    defaults: { _controller: GestionPfeBundle:Demandes:pdf }

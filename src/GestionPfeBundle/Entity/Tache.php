@@ -41,12 +41,6 @@ class Tache
      * @param bool $etat
      * @param $idEncadrement
      */
-    public function __construct($tache, $etat, $idEncadrement)
-    {
-        $this->tache = $tache;
-        $this->etat = $etat;
-        $this->idEncadrement = $idEncadrement;
-    }
 
     /**
      * @return mixed

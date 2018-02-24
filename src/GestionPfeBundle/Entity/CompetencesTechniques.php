@@ -22,14 +22,26 @@ class CompetencesTechniques
     private $id;
 
     /**
-     * CompetencesTechniques constructor.
-     * @param $idCv
-     * @param string $competence
+     * @var string
+     *
+     * @ORM\Column(name="level", type="text" ,nullable=true)
      */
-    public function __construct($idCv, $competence)
+    private $level;
+
+    /**
+     * @return string
+     */
+    public function getLevel()
     {
-        $this->idCv = $idCv;
-        $this->competence = $competence;
+        return $this->level;
+    }
+
+    /**
+     * @param string $level
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
     }
 
     /**
@@ -52,7 +64,7 @@ class CompetencesTechniques
      * @var
      *
      * @ORM\ManyToOne(targetEntity="Cv")
-     * @ORM\JoinColumn(name="idcv", referencedColumnName="id")
+     * @ORM\JoinColumn(name="idcv", referencedColumnName="id",onDelete="CASCADE")
      */
     private $idCv;
 

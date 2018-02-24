@@ -39,3 +39,4 @@ services:
     redirect_after_login:
         class: "%redirect_after_login.class%"
         arguments: ["@router"]
+

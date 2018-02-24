@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new GestionPfeBundle\GestionPfeBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Skies\QRcodeBundle\SkiesQRcodeBundle(),
 
 
         ];

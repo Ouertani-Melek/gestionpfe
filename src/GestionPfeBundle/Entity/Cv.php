@@ -21,41 +21,32 @@ class Cv
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="formation", type="string", length=5000)
-     */
-    private $formation;
+
 
     /**
      * @var string
      *
-     * @ORM\Column(name="langues", type="string", length=2000)
+     * @ORM\Column(name="dateModif", type="datetime" ,nullable=true)
      */
-    private $langues;
+    private $dateModif;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="centresInterets", type="string", length=5000)
+     * @return string
      */
-    private $centresInterets;
-
-    /**
-     * Cv constructor.
-     * @param string $formation
-     * @param string $langues
-     * @param string $centresInterets
-     * @param $idUser
-     */
-    public function __construct($formation, $langues, $centresInterets, $idUser)
+    public function getDateModif()
     {
-        $this->formation = $formation;
-        $this->langues = $langues;
-        $this->centresInterets = $centresInterets;
-        $this->idUser = $idUser;
+        return $this->dateModif;
     }
+
+    /**
+     * @param string $dateModif
+     */
+    public function setDateModif()
+    {
+        $this->dateModif = new \DateTime("now");
+
+    }
+
 
     /**
      * @return mixed
@@ -75,7 +66,7 @@ class Cv
     /**
      * @var
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\OneToOne(targetEntity="User")
      * @ORM\JoinColumn(name="iduser", referencedColumnName="id")
      */
     private $idUser;
@@ -92,76 +83,9 @@ class Cv
         return $this->id;
     }
 
-    /**
-     * Set formation
-     *
-     * @param string $formation
-     *
-     * @return Cv
-     */
-    public function setFormation($formation)
-    {
-        $this->formation = $formation;
 
-        return $this;
-    }
 
-    /**
-     * Get formation
-     *
-     * @return string
-     */
-    public function getFormation()
-    {
-        return $this->formation;
-    }
 
-    /**
-     * Set langues
-     *
-     * @param string $langues
-     *
-     * @return Cv
-     */
-    public function setLangues($langues)
-    {
-        $this->langues = $langues;
 
-        return $this;
-    }
-
-    /**
-     * Get langues
-     *
-     * @return string
-     */
-    public function getLangues()
-    {
-        return $this->langues;
-    }
-
-    /**
-     * Set centresInterets
-     *
-     * @param string $centresInterets
-     *
-     * @return Cv
-     */
-    public function setCentresInterets($centresInterets)
-    {
-        $this->centresInterets = $centresInterets;
-
-        return $this;
-    }
-
-    /**
-     * Get centresInterets
-     *
-     * @return string
-     */
-    public function getCentresInterets()
-    {
-        return $this->centresInterets;
-    }
 }
 

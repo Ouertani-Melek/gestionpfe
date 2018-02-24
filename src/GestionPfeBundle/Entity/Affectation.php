@@ -34,11 +34,7 @@ class Affectation
      * @param $idEnseignant
      * @param $idSoutenance
      */
-    public function __construct($idEnseignant, $idSoutenance)
-    {
-        $this->idEnseignant = $idEnseignant;
-        $this->idSoutenance = $idSoutenance;
-    }
+
 
     /**
      * @return mixed
