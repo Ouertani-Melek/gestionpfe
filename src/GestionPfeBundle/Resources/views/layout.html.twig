@@ -50,7 +50,6 @@
 
 
 
-
 </head>
 <body>
 
@@ -104,6 +103,7 @@
                                 Bonjour {{ app.user.getUsername() }} |
                                 <li><a href="{{ path('fos_user_profile_show') }} "><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
                                 <li><a href="{{ path('fos_user_security_logout') }} " ><i class="fa fa-sign-out" aria-hidden="true"></i>LogOut</a></li>
+
                             {% else %}
                                 <li><a href="{{ path('fos_user_registration_register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Register</a></li>
                                 <li><a href="{{ path('fos_user_security_login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>

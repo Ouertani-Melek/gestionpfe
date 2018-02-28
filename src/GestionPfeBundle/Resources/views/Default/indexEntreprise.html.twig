@@ -70,60 +70,36 @@
                     <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <i class="fa fa-bell-o"></i>
-                            <span class="badge headerBadgeColor1"> 6 </span>
+                            <span class="badge headerBadgeColor1"> {{ result|length + nbrNotif }}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="external">
                                 <h3><span class="bold">Notifications</span></h3>
-                                <span class="notification-label purple-bgcolor">New 6</span>
+                                <span class="notification-label purple-bgcolor">New {{ result|length + nbrNotif }}</span>
                             </li>
                             <li>
                                 <ul class="dropdown-menu-list small-slimscroll-style" data-handle-color="#637283">
+                                    {% for r in result %}
                                     <li>
                                         <a href="javascript:;">
-                                            <span class="time">just now</span>
+                                            <span class="time">A l'instant</span>
                                             <span class="details">
-                                                <span class="notification-icon circle deepPink-bgcolor"><i class="fa fa-check"></i></span> Congratulations!. </span>
+                                                <span class="notification-icon circle deepPink-bgcolor"><i class="fa fa-check"></i></span> {{ r.titre }} va devenir car il n'y a pas des demandes sur cet offre  </span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">3 mins</span>
-                                            <span class="details">
-                                                <span class="notification-icon circle purple-bgcolor"><i class="fa fa-user o"></i></span>
-                                                <b>John Micle </b>is now following you. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">7 mins</span>
-                                            <span class="details">
-                                                <span class="notification-icon circle blue-bgcolor"><i class="fa fa-comments-o"></i></span>
-                                                <b>Sneha Jogi </b>sent you a message. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">12 mins</span>
-                                            <span class="details">
-                                                <span class="notification-icon circle pink"><i class="fa fa-heart"></i></span>
-                                                <b>Ravi Patel </b>like your photo. </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">15 mins</span>
-                                            <span class="details">
-                                                <span class="notification-icon circle yellow"><i class="fa fa-warning"></i></span> Warning! </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span class="time">10 hrs</span>
-                                            <span class="details">
-                                                <span class="notification-icon circle red"><i class="fa fa-times"></i></span> Application error. </span>
-                                        </a>
-                                    </li>
+                                    {% endfor %}
+
+                                        {% for notification in notifications %}
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <span class="time">{{ notification.date|date('Y-m-d H:i:s') }}</span>
+                                                    <span class="details">
+                                                <span class="notification-icon circle deepPink-bgcolor"><i class="fa fa-check"></i></span> {{ notification.message }}!. </span>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+
+
                                 </ul>
                                 <div class="dropdown-menu-footer">
                                     <a href="javascript:void(0)"> All notifications </a>
@@ -267,21 +243,17 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item ">
-                                    <a href="index-2.html" class="nav-link ">
+                                    <a href="{{ path('ajouter_un_offre') }}" class="nav-link ">
                                         <span class="title">Ajouter Offre</span>
                                         <span class="selected"></span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a href="dashboard2.html" class="nav-link ">
-                                        <span class="title">Annuler Offre</span>
+                                    <a href="{{ path('afficher_offre_entreprise') }}" class="nav-link ">
+                                        <span class="title">Afficher mes Offres</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="dashboard3.html" class="nav-link ">
-                                        <span class="title">Modifier Offre</span>
-                                    </a>
-                                </li>
+
                             </ul>
                         </li>
 

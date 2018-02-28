@@ -10,4 +10,34 @@ namespace GestionPfeBundle\Repository;
  */
 class DemandesRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function verif($id)
+    {
+        $query = $this->getEntityManager()->createQuery("SELECT d FROM GestionPfeBundle:Demandes d WHERE d.idOffre=$id");
+
+        return $query->getOneOrNullResult();
+    }
+    public function verifpost($id,$iduser)
+    {
+        $query = $this->getEntityManager()->createQuery("SELECT d FROM GestionPfeBundle:Demandes d WHERE d.idOffre=$id AND d.idUser=$iduser");
+
+        return $query->getOneOrNullResult();
+    }
+    public function AllDemandesAccept($idUser)
+    {
+        $query=$this->getEntityManager()
+            ->createQuery("
+        select d from GestionPfeBundle:Demandes d where d.etatEntretien = 1 and d.confirmation = 0 and d.idUser=:id ")
+            ->setParameter('id',$idUser);
+        return $query->getResult();
+    }
+
+    public function verifconfirmation($idUser)
+    {
+        $query=$this->getEntityManager()
+            ->createQuery("
+        select d from GestionPfeBundle:Demandes d where d.etatEntretien = 1 and d.confirmation = 1 and d.idUser=:id ")
+            ->setParameter('id',$idUser);
+        return $query->getOneOrNullResult();
+    }
 }

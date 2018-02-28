@@ -49,7 +49,7 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
             if (in_array('ROLE_ENSEIGNANT', $rolesTab, true) )
             $redirection = new RedirectResponse($this->router->generate('gestion_pfe_enseignanthomepage'));
         else
-            $redirection = new RedirectResponse($this->router->generate('gestion_pfe_homepage'));
+            $redirection = new RedirectResponse($this->router->generate('gestion_pfe_user'));
 
         return $redirection;
     }

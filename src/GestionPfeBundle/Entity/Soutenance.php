@@ -27,12 +27,7 @@ class Soutenance
      * @param string $type
      * @param \DateTime $date
      */
-    public function __construct($idUser, $type, \DateTime $date)
-    {
-        $this->idUser = $idUser;
-        $this->type = $type;
-        $this->date = $date;
-    }
+
 
     /**
      * @return mixed
@@ -61,17 +56,51 @@ class Soutenance
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(name="type", type="string", length=255,nullable=true)
      */
     private $type;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="salle", type="string", length=255,nullable=true)
+     */
+    private $salle;
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="etatDemandeSoutenance", type="boolean",nullable=true)
+     */
+    private $etatDemandeSoutenance;
+
+    /**
+     * @return bool
+     */
+    public function isEtatDemandeSoutenance()
+    {
+        return $this->etatDemandeSoutenance;
+    }
+
+    /**
+     * @param bool $etatDemandeSoutenance
+     */
+    public function setEtatDemandeSoutenance($etatDemandeSoutenance)
+    {
+        $this->etatDemandeSoutenance = $etatDemandeSoutenance;
+    }
+
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="dateSoutenanceCommercial", type="datetime",nullable=true)
      */
-    private $date;
-
+    private $dateSoutenanceCommercial;
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateSoutenanceTechnique", type="datetime",nullable=true)
+     */
+    private $dateSoutenanceTechnique;
 
     /**
      * Get id
@@ -98,6 +127,38 @@ class Soutenance
     }
 
     /**
+     * @return \DateTime
+     */
+    public function getDateSoutenanceCommercial()
+    {
+        return $this->dateSoutenanceCommercial;
+    }
+
+    /**
+     * @param \DateTime $dateSoutenanceCommercial
+     */
+    public function setDateSoutenanceCommercial($dateSoutenanceCommercial)
+    {
+        $this->dateSoutenanceCommercial = $dateSoutenanceCommercial;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateSoutenanceTechnique()
+    {
+        return $this->dateSoutenanceTechnique;
+    }
+
+    /**
+     * @param \DateTime $dateSoutenanceTechnique
+     */
+    public function setDateSoutenanceTechnique($dateSoutenanceTechnique)
+    {
+        $this->dateSoutenanceTechnique = $dateSoutenanceTechnique;
+    }
+
+    /**
      * Get type
      *
      * @return string
@@ -108,27 +169,21 @@ class Soutenance
     }
 
     /**
-     * Set date
-     *
-     * @param \DateTime $date
-     *
-     * @return Soutenance
+     * @return string
      */
-    public function setDate($date)
+    public function getSalle()
     {
-        $this->date = $date;
-
-        return $this;
+        return $this->salle;
     }
 
     /**
-     * Get date
-     *
-     * @return \DateTime
+     * @param string $salle
      */
-    public function getDate()
+    public function setSalle($salle)
     {
-        return $this->date;
+        $this->salle = $salle;
     }
+
+
 }
 

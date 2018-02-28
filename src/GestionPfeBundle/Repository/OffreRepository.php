@@ -10,4 +10,10 @@ namespace GestionPfeBundle\Repository;
  */
 class OffreRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findOffre()
+    {
+        $query = $this->getEntityManager()->createQuery("SELECT DISTINCT (o.idUser) FROM GestionPfeBundle:Offre o ");
+
+        return $query->getResult();
+    }
 }

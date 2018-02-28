@@ -78,9 +78,21 @@
                                                             (+216){{ d.idUser.numeroTel }}  </a></td>
                                                     <td><a href="mailto:{{ d.idUser.email }}">
                                                             {{ d.idUser.email }}</a></td>
-                                                    <td class="left">{{ d.dateDemande|date }}</td>
-                                                    <td class="left">{{ d.dateEntretien|date }}</td>
-                                                    <td class="left">{{ d.MethodeCommunication }}</td>
+                                                    <td class="left">{{ d.dateDemande|date('Y/m/d H:i:s') }}</td>
+                                                    <td class="left">{{ d.dateEntretien|date('Y/m/d H:i:s') }}</td>
+                                                    {% if d.MethodeCommunication =='Skype' %}
+                                                    <td class="left"><button data-toggle="button" class="btn btn-skype" aria-pressed="false"><i class="fa fa-skype "></i>
+
+                                                        </button></td>
+                                                        {% elseif d.MethodeCommunication =='Viber' %}
+                                                            <td class="left"><button data-toggle="button" class="btn btn-facebook" aria-pressed="false"><i class="fa fa-video-camera "></i>
+
+                                                                </button></td>
+                                                        {% else %}
+                                                        <td class="left"><button data-toggle="button" class="btn btn-linkedin" aria-pressed="false"><i class="fa fa-phone"></i>
+
+                                                            </button></td>
+                                                    {% endif %}
                                                     <td class="left">
                                                         {% if d.etatEntretien is null %}
                                                         <button class="btn btn-success btn-xs " id="b{{ d.id }}">
@@ -128,7 +140,7 @@
             <div class="tab-pane" id="tab2">
                 <div class="row">
                     {% for d in demandes %}
-                    {% if (d.etatDemande==1) and (d.dateEntretien is null) %}
+                    {% if (d.etatDemande==1) and (d.dateEntretien is not null) %}
                         <div class="col-md-4">
                             <div class="card card-box">
                                 <div class="card-body no-padding ">
@@ -140,7 +152,7 @@
                                             <div class="name-center"> Niveau : 5éme </div>
 
                                         </div>
-                                        <p>Titre Offre : {{ d.idOffre.titre }} <br />date demande:</p>
+                                        <p>Titre Offre : {{ d.idOffre.titre }} <br />date demande:{{ d.dateDemande|date('Y/m/d') }}</p>
                                         <div><p><i class="fa fa-phone"></i><a href="tel:(+216){{ d.idUser.numeroTel }}">  (+216){{ d.idUser.numeroTel }}</a></p> </div>
                                         <div class="profile-userbuttons" id="c{{ d.id }}">
                                             <a  class="btn btn-circle deepPink-bgcolor btn-sm"  onclick="valider({{ d.id }})" >Valider Entretien</a>

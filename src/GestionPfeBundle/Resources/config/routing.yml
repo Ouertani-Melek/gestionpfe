@@ -104,3 +104,121 @@ FixerEntretien:
 pdfAction:
     path:     /pdf
     defaults: { _controller: GestionPfeBundle:Demandes:pdf }
+ajouter_un_offre:
+    path:     /ajouteroffre
+    defaults: { _controller: GestionPfeBundle:Offre:ajouterOffreEntreprise }
+ajouter_avec_ajax:
+    path:     /ajouteroffreA
+    defaults: { _controller: GestionPfeBundle:Offre:ajouterOffreEntrepriseAjax }
+afficher_offre_entreprise:
+    path:     /mesOffres
+    defaults: { _controller: GestionPfeBundle:Offre:afficherOffreEntreprise }
+edit_offre_entreprise:
+    path:     /editOffre
+    defaults: { _controller: GestionPfeBundle:Offre:editOffre }
+delete_tech:
+    path:     /deletetech
+    defaults: { _controller: GestionPfeBundle:Technologies:deleteTech }
+afficher_offre_admin:
+    path:     /toutLesOffresAdmin
+    defaults: { _controller: GestionPfeBundle:Offre:approuverOffres }
+gestion_pfe_user:
+    path:     /user
+    defaults: { _controller: GestionPfeBundle:Default:indexUser }
+_afficher_demandeAdmin:
+    path:     /AfficherDemandeAdmin
+    defaults: { _controller: GestionPfeBundle:Demandes:afficherDemandeAdmin }
+_afficher_demandeEtudiant:
+    path:     /AfficherDemandeEtudiant
+    defaults: { _controller: GestionPfeBundle:Demandes:afficherDemandeEtudiant }
+_afficher_stages:
+    path:     /AfficheStage
+    defaults: { _controller: GestionPfeBundle:Stage:AfficheStage }
+
+_afficher_listencadrant:
+    path:     /AfficheEncadrant
+    defaults: { _controller: GestionPfeBundle:Stage:AfficheEncadrant }
+
+affecterencadrant_avec_ajax:
+    path:     /AfficheEncadrantA
+    defaults: { _controller: GestionPfeBundle:Stage:AffecterEncadrant }
+
+
+desaffecterencadrant_avec_ajax:
+    path:     /AnnulerEncadrant
+    defaults: { _controller: GestionPfeBundle:Stage:AnnulerEncadrant }
+AfficheMesStages:
+    path:     /AfficheMesStages
+    defaults: { _controller: GestionPfeBundle:Stage:AfficheMesStages }
+AfficheDemandesAccept:
+    path:     /AfficheDemandesAccept
+    defaults: { _controller: GestionPfeBundle:Demandes:AfficheDemandesAccept }
+confirmer_demande:
+    path:     /confirmer_demande/{id}
+    defaults: { _controller: GestionPfeBundle:Stage:confirmerDemande }
+_afficher_mes_etudiants:
+    path:     /AfficheMesEtudiants
+    defaults: { _controller: GestionPfeBundle:Encadrement:AfficheMesEtudiants }
+details_encadrement:
+    path:     /DetailsEncadrement
+    defaults: { _controller: GestionPfeBundle:Encadrement:DetailsEncadrement }
+
+ValiderTache:
+    path:     /ValiderTache
+    defaults: { _controller: GestionPfeBundle:Encadrement:ValiderTache }
+AjoutTache:
+    path:     /AjoutTache
+    defaults: { _controller: GestionPfeBundle:Encadrement:Ajouttache }
+DevaliderTache:
+    path:     /InvaliderTache
+    defaults: { _controller: GestionPfeBundle:Encadrement:InvaliderTache }
+
+piechart:
+    path:     /piechart
+    defaults: { _controller: GestionPfeBundle:Encadrement:index }
+
+Ajoutdate:
+    path:     /Ajoutdate
+    defaults: { _controller: GestionPfeBundle:Encadrement:AjoutDateReunion }
+
+download_excel:
+    path:     /download_excel
+    defaults: { _controller: GestionPfeBundle:Encadrement:DownloadExcel }
+
+_ajouter_demande_soutenance:
+    path:     /AjouterDemandeSoutenance
+    defaults: { _controller: GestionPfeBundle:Soutenance:AjouterDemandeSoutenance }
+
+_afficher_demande_soutenance:
+    path:     /AfficherDemandeSoutenance
+    defaults: { _controller: GestionPfeBundle:Soutenance:AfficherDemandeSoutenance }
+
+_ajouter_soutenance:
+    path:     /AjouterSoutenance
+    defaults: { _controller: GestionPfeBundle:Soutenance:AjouterSoutenance }
+
+_afficher_soutenance:
+    path:     /AfficherSoutenance
+    defaults: { _controller: GestionPfeBundle:Soutenance:AfficherSoutenance }
+
+_modifer_soutenance:
+    path:     /ModiferSoutenance
+    defaults: { _controller: GestionPfeBundle:Soutenance:ModiferSoutenance }
+
+_affecter_jury:
+    path:     /AffecterJury
+    defaults: { _controller: GestionPfeBundle:Soutenance:AffecterJury }
+
+_modifer_jury:
+    path:     /ModiferJury
+    defaults: { _controller: GestionPfeBundle:Soutenance:ModiferJury }
+
+_archiver_soutenance:
+    path:     /ArchiverSoutenance
+    defaults: { _controller: GestionPfeBundle:Soutenance:ArchiverSoutenance }
+
+
+_afficher_soutenances_affectes:
+    path:     /AfficherSoutenancesAffectes
+    defaults: { _controller: GestionPfeBundle:Affectation:AfficherSoutenancesAffectes }
+

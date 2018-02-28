@@ -38,11 +38,16 @@
             <table>
                 <thead>
                 <tr>
-                    <a id="supp" href="{{ path('_modifier_cv', {'id':cv.id}) }}">
-                        <button id="supp" class="btn-danger"> Supprimer</button>
-                    </a>
 
-
+                    <button class="btn btn-danger btn-xs">
+                        <a  href="{{ path('_modifier_cv', {'id':cv.id}) }}">
+                        <i class="fa fa-trash-o "></i>
+                        </a>
+                    </button>
+                    <button  class="theme-btn hvr-shutter-in-horizontal" style="float: right" aria-label="Retour">
+                        <a href="{{ path('gestion_pfe_homepage') }}">
+                            <i class="fa fa-graduation-cap"></i> </a>
+                    </button>
                 </tr>
 
                 </thead>

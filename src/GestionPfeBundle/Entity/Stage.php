@@ -43,26 +43,7 @@ class Stage
      */
     private $idEtudiant;
 
-    /**
-     * Stage constructor.
-     * @param $idEntreprise
-     * @param $idEncadrant
-     * @param $idEtudiant
-     * @param string $titreStage
-     * @param string $descreptif
-     * @param \DateTime $dateDebut
-     * @param \DateTime $dateFin
-     */
-    public function __construct($idEntreprise, $idEncadrant, $idEtudiant, $titreStage, $descreptif, \DateTime $dateDebut, \DateTime $dateFin)
-    {
-        $this->idEntreprise = $idEntreprise;
-        $this->idEncadrant = $idEncadrant;
-        $this->idEtudiant = $idEtudiant;
-        $this->titreStage = $titreStage;
-        $this->descreptif = $descreptif;
-        $this->dateDebut = $dateDebut;
-        $this->dateFin = $dateFin;
-    }
+
 
     /**
      * @return mixed
@@ -130,7 +111,7 @@ class Stage
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateDebut", type="date")
+     * @ORM\Column(name="dateDebut", type="date", nullable=true)
      */
     private $dateDebut;
 

@@ -10,4 +10,18 @@ namespace GestionPfeBundle\Repository;
  */
 class StageRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function AllStagesNoEncadrant()
+    {
+        $query=$this->getEntityManager()
+            ->createQuery("
+        select s from GestionPfeBundle:Stage s where s.idEncadrant is NULL ");
+        return $query->getResult();
+    }
+    public function AllEncadrant()
+    {
+        $query=$this->getEntityManager()
+            ->createQuery("
+        select a from GestionPfeBundle:User a where a.roles = 'ROLE_ENSEIGNANT' ");
+        return $query->getResult();
+    }
 }

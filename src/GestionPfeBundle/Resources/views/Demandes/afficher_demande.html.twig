@@ -35,6 +35,7 @@
                                             <th> Email </th>
                                             <th>Date Demande</th>
                                             <th> Etat Demande </th>
+                                            <th> % succés</th>
                                             <th> Action </th>
                                         </tr>
                                         </thead>
@@ -52,14 +53,31 @@
                                                     (+216){{ d.idUser.numeroTel }}  </a></td>
                                             <td><a href="mailto:{{ d.idUser.email }}">
                                                     {{ d.idUser.email }}</a></td>
-                                            <td class="left">{{ d.dateDemande|date }}</td>
+                                            <td class="left">{{ d.dateDemande|date('Y/m/d H:i:s') }}</td>
                                             {% if d.EtatDemande is null %}
-                                            <td class="left">non Traité</td>
+                                            <td class="left"><button data-toggle="button" class="btn btn-youtube" aria-pressed="false"><i class="fa fa-thumbs-down "></i>
+                                                </button></td>
                                             {% elseif d.etatDemande==1 %}
                                                 <td class="left">Traité</td>
                                             {% else %}
                                                 <td class="left">Refusé</td>
                                             {% endif %}
+                                            <td>{% if pourcentages[0][0] is defined %}
+                                                    {% for pourcentage in pourcentages %}
+                                                        {% if pourcentage[0]== d.idOffre.id %}
+                                                            {% if pourcentage[1]>50 %}
+                                                                <button data-toggle="button" class="btn btn-facebook" aria-pressed="false"><i class="fa fa-thumbs-up "></i>
+                                                                    {{ pourcentage[1]|number_format(1, '.', ',') }}
+                                                                </button>
+                                                                {% else %}
+                                                                    <button data-toggle="button" class="btn btn-youtube" aria-pressed="false"><i class="fa fa-thumbs-down "></i>
+                                                                        {{ pourcentage[1]|number_format(1, '.', ',') }}
+                                                                    </button>
+                                                                {% endif %}
+                                                        {% endif %}
+                                                    {% endfor %}
+
+                                                {% endif %}</td>
 
                                             <td>
                                                 <a  class="btn btn-primary btn-xs">
@@ -97,7 +115,7 @@
                                         <div class="name-center"> Niveau : 5éme </div>
 
                                     </div>
-                                    <p>Titre Offre : {{ d.idOffre.titre }} <br />date demande: <br>
+                                    <p>Titre Offre : {{ d.idOffre.titre }} <br />date demande:{{ d.dateDemande|date('Y/m/d H:i:s') }} <br>
                                         {% if d.etatDemande is null %} Etat Demande: non Traité
                                         {% elseif d.etatDemande==1 %} Etat Demande: Acceptée
                                         {% else %} Etat Demande : Refusée</p>

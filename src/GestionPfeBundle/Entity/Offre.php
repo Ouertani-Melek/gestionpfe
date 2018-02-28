@@ -44,6 +44,12 @@ class Offre
     private $titre;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateCreation", type="datetime", nullable=true)
+     */
+    private $dateCreation;
+    /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=5000)
@@ -220,5 +226,22 @@ class Offre
     {
         return $this->duree;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateCreation()
+    {
+        return $this->dateCreation;
+    }
+
+    /**
+     * @param \DateTime $dateCreation
+     */
+    public function setDateCreation($dateCreation)
+    {
+        $this->dateCreation = $dateCreation;
+    }
+
 }
 

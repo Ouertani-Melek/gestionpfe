@@ -39,31 +39,31 @@ class Tache
      * Tache constructor.
      * @param string $tache
      * @param bool $etat
-     * @param $idEncadrement
+     * @param $idStage
      */
 
     /**
      * @return mixed
      */
-    public function getIdEncadrement()
+    public function getIdStage()
     {
-        return $this->idEncadrement;
+        return $this->idStage;
     }
 
     /**
-     * @param mixed $idEncadrement
+     * @param mixed $idStage
      */
-    public function setIdEncadrement($idEncadrement)
+    public function setIdStage($idStage)
     {
-        $this->idEncadrement = $idEncadrement;
+        $this->idStage = $idStage;
     }
     /**
      * @var
      *
-     * @ORM\ManyToOne(targetEntity="Encadrement")
-     * @ORM\JoinColumn(name="idencadrement", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Stage")
+     * @ORM\JoinColumn(name="idestage", referencedColumnName="id")
      */
-    private $idEncadrement;
+    private $idStage;
 
 
     /**

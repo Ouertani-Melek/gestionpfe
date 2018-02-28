@@ -23,7 +23,7 @@
 
                 <ul>
             {% for f in formation %}
-            <li>{{ f.formation }} obtenu en <span> {{ f.annee }} </span></li>
+            <li>{{ f.formation }} obtenu en <span> {{ f.annee|date('Y/m/d') }} </span></li>
             {% endfor %}
             </ul>
             </div>
@@ -47,7 +47,7 @@
                                     <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                                    <div class="progress-value">{{ t.competence }}</div>
+                                    <div class="progress-value" style="font-size: medium">{{ t.competence }}</div>
                                 </div>
                                 {% elseif t.level=='pauvre' %}
                                 <div class="progress pink">
@@ -57,7 +57,7 @@
                                     <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                                    <div class="progress-value">{{ t.competence }}</div>
+                                    <div class="progress-value" style="font-size: medium">{{ t.competence }}</div>
                                 </div>
                                 {% elseif t.level=='bien' %}
                                 <div class="progress green">
@@ -67,7 +67,7 @@
                                     <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                                    <div class="progress-value">{{ t.competence }}</div>
+                                    <div class="progress-value" style="font-size: medium">{{ t.competence }}</div>
                                 </div>
                                 {% else %}
                                 <div class="progress blue">
@@ -77,7 +77,7 @@
                                     <span class="progress-right">
                     <span class="progress-bar"></span>
                 </span>
-                                    <div class="progress-value">{{ t.competence }}</div>
+                                    <div class="progress-value" style="font-size: medium">{{ t.competence }}</div>
                                 </div>
                                 {% endif %}
                             </div>

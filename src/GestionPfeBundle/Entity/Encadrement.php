@@ -31,38 +31,25 @@ class Encadrement
     /**
      * @var bool
      *
-     * @ORM\Column(name="Etat", type="boolean")
+     * @ORM\Column(name="Etat", type="boolean",nullable=true)
      */
     private $etat;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="pourcentage", type="float")
+     * @ORM\Column(name="pourcentage", type="float",nullable=true)
      */
     private $pourcentage;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateReunion", type="datetime")
+     * @ORM\Column(name="dateReunion", type="datetime",nullable=true)
      */
     private $dateReunion;
 
-    /**
-     * Encadrement constructor.
-     * @param $idStage
-     * @param bool $etat
-     * @param float $pourcentage
-     * @param \DateTime $dateReunion
-     */
-    public function __construct($idStage, $etat, $pourcentage, \DateTime $dateReunion)
-    {
-        $this->idStage = $idStage;
-        $this->etat = $etat;
-        $this->pourcentage = $pourcentage;
-        $this->dateReunion = $dateReunion;
-    }
+
 
 
     /**

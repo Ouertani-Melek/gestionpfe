@@ -19,7 +19,10 @@ class AppKernel extends Kernel
             new GestionPfeBundle\GestionPfeBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Skies\QRcodeBundle\SkiesQRcodeBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+            new Liuggio\ExcelBundle\LiuggioExcelBundle(),
 
 
         ];
